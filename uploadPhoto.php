@@ -23,15 +23,9 @@ require_once __DIR__.'/includes/config.php';
         if ($app->tieneRol('user', 'Acceso Denegado', 'Necesitas estar logueado.')) {
       ?>
 
-
       <?php $formFoto = new \es\ucm\fdi\aw\FormularioFoto();
   		$formFoto->gestiona();
   		?>
-
-
-    <?php print_r($_SESSION) ?>
-
-
 
   </article>
 
