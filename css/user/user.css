@@ -1,0 +1,116 @@
+.user li {
+  list-style-type: none;
+  background:darkGrey;
+  text-align: center;
+  margin:4px;
+  margin-left: 5px;
+  border-radius: 10px;
+  width: 350px;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.user{
+  display:-webkit-inline-box;
+  font-size: 25px;
+  position: relative;
+
+}
+
+article{
+	background: white !important;
+}
+
+.user a {
+  text-decoration: none;
+  color: LightSlateGrey  ;
+
+}
+
+.profilePicture{
+  display: inline-block;
+
+}
+#picture{
+  border-radius: 30%;
+  border: 3px solid black;
+}
+
+.info {
+  position:absolute;
+  text-decoration: none;
+  display:inline-block;
+  font-size: 25px;
+}
+
+.info ul{
+
+
+}
+.info li{
+  list-style-type: none;
+  background:darkGrey;
+  text-align: center;
+  margin:4px;
+  margin-left: 5px;
+  border-radius: 10px;
+  width: 350px;
+  color: black;
+  border: 2px solid DarkBlue  ;
+}
+
+@media screen and (max-width : 1150px){
+	 img{
+    display: none;
+  }
+}
+
+  @media screen and (max-width : 830px){
+  	.user{
+      font-size: 15px;
+    }
+    .info{
+      font-size: 15px;
+    }
+
+    .user li {
+      width: 250px;
+
+    }
+
+    .info li {
+      width: 250px;
+
+    }
+}
+
+
+@media screen and (max-width : 605px){
+  .user{
+    font-size: 10px;
+  }
+  .info{
+    font-size: 10px;
+  }
+
+  .user li {
+    width: 150px;
+
+  }
+
+  .info li {
+    width: 150px;
+
+  }
+}
+
+@media screen and (max-width : 386px){
+  .user li{
+    display:none;
+  }
+
+  .info li {
+	display:none;
+  }
+
+ }

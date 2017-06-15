@@ -1,0 +1,40 @@
+.promo-contenedor {
+	background-color: #f6f5f2;
+
+	font-family:"HCo Gotham SSm",Helvetica,Arial,sans-serif;
+	margin: 50px;
+}
+
+.promo-contenedor h1{
+  clear: both;
+  text-decoration: underline;
+  margin-top: 20px;
+  margin-left: 70px;
+  font-size: 2rem;
+}
+
+.promo-img {
+  float: left;
+  padding-left: 70px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-right: 50px;
+  width: 400px;
+  max-width: 50%;
+
+}
+
+.promo-img img {
+  width: 100%;
+}
+
+.promo-descripcion {
+  float: left;
+  width: 800px;
+  padding-top: 50px;
+  max-width: 50%;
+}
+
+article {
+	background-color: white !important;
+}

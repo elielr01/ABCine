@@ -1,0 +1,64 @@
+.cine-contenedor {
+	background-color: #f6f5f2;
+
+	font-family:"HCo Gotham SSm",Helvetica,Arial,sans-serif;
+
+	border-color: black;
+	border-style: solid;
+
+	margin: 30px;
+}
+
+
+
+.cine-contenedor-header h1 {
+	text-decoration: underline;
+	font-size: 2rem;
+}
+
+.cine-contenedor-promos{
+	padding: 10px;
+	overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.cine-contenedor-promos h1{
+  clear: both;
+  text-decoration: underline;
+  margin-top: 20px;
+  margin-left: 10px;
+  font-size: 2rem;
+}
+
+.cine-contenedor-promos h2 {
+	margin-left: 10px;
+	margin-top: 10px;
+	text-decoration: underline;
+}
+
+.promos-destacadas {
+  clear: both;
+}
+
+.promos-destacadas {
+  clear: both;
+}
+
+.promos-img{
+  float:left;
+	overflow: hidden;
+}
+
+.promos-img img{
+	transition: .9s; /*para que al volver a su posicion lo haga tb despacio*/
+	width: 100%; /*la imagen se expande completamente en el div*/
+	display:flex;
+ }
+
+.promos-img:hover img{
+	transform:scale(1.20);
+	transition: .9s;
+}
+
+
+
