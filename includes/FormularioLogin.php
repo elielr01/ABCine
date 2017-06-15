@@ -29,7 +29,7 @@ class FormularioLogin extends Form {
       <input type="submit" value="Ingresar">
       <a id="reg" href="recordar.php">Recordar contraseña</a>
 
-      <a id="create" href="recordar.php">Crear cuenta</a>
+      <a id="create" href="registro.php">Crear cuenta</a>
 
 
 EOF;
