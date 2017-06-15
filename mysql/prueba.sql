@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-05-2017 a las 22:46:31
+-- Tiempo de generación: 15-06-2017 a las 03:01:17
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -197,17 +197,18 @@ CREATE TABLE `usuarios` (
   `apellidos` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
   `tlf` int(32) NOT NULL,
   `correoAlternativo` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `nombreFoto` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT 'pic.jpg'
+  `nombreFoto` varchar(60) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT 'pic.jpg',
+  `activo` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellidos`, `tlf`, `correoAlternativo`, `nombreFoto`) VALUES
-(1, 'user@example.org', '$2y$10$0eR.KhfTH5ybn/jlB86hwe/1nQeCKXk2RcLEjBscJbpUaF504kSOi', 'aa', 'aa', 123, '', 'pic.jpg'),
-(2, 'admin@example.org', '$2y$10$0eR.KhfTH5ybn/jlB86hwe/1nQeCKXk2RcLEjBscJbpUaF504kSOi', '', '', 0, '', 'pic.jpg'),
-(7, 'wilortiz@ucm.es', '$2y$10$11okZYT50Pm2xG1BERxL8.RC5t.pBTraDetpqgWZOt6XgBwFTidA.', 'andresaurio', 'ortiz', 1231231, 'andreswauu@gmail.com', 'pic.jpg');
+INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`, `apellidos`, `tlf`, `correoAlternativo`, `nombreFoto`, `activo`) VALUES
+(1, 'user@example.org', '$2y$10$0eR.KhfTH5ybn/jlB86hwe/1nQeCKXk2RcLEjBscJbpUaF504kSOi', 'aa', 'aa', 123, '', 'pic.jpg', 1),
+(2, 'admin@example.org', '$2y$10$0eR.KhfTH5ybn/jlB86hwe/1nQeCKXk2RcLEjBscJbpUaF504kSOi', '', '', 0, '', 'pic.jpg', 1),
+(7, 'wilortiz@ucm.es', '$2y$10$11okZYT50Pm2xG1BERxL8.RC5t.pBTraDetpqgWZOt6XgBwFTidA.', 'andresaurio', 'ortiz', 1231231, 'andreswauu@gmail.com', 'pic.jpg', 1);
 
 --
 -- Índices para tablas volcadas
