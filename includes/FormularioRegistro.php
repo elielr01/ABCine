@@ -22,7 +22,7 @@ class FormularioRegistro extends Form {
       <div class="inputs">
 					<input type="text"  	name="nombre" placeholder="Nombre" class="in100" required value=$nombre>
 					<input type="text"  	name="apellidos" placeholder="Apellidos" class="in100" required value=$apellidos>
-					<input type="email" 	name="email" placeholder="Correo electronico" class="in100" required value=$username>
+					<input type="email" 	name="email" placeholder="Correo electrónico" class="in100" required value=$username>
 					<input type="password"  name="pass" placeholder="Contraseña" class="in50" required value=$password>
 					<input type="text" 	 	name="telefono" placeholder="Teléfono" class="in50" required value=$tlf>
   					<input type="email" 	 	name="emailAlt" placeholder="Dirección de correo alternativa" class="in100" required value=$dirAlternativa>
