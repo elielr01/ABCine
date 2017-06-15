@@ -7,7 +7,8 @@ class FormularioLogin extends Form {
   const HTML5_EMAIL_REGEXP = '^[a-zA-Z0-9.!#$%&\'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$';
 
   public function __construct() {
-    parent::__construct('formLogin');
+    $opciones['class']="formA";
+    parent::__construct('formLogin',$opciones);
   }
 
   protected function generaCamposFormulario ($datos) {
@@ -19,7 +20,7 @@ class FormularioLogin extends Form {
     }
 
     $camposFormulario=<<<EOF
-    <form class ="formA" action ="index.php" onsubmit="mgs()">
+
 
       <h2> Iniciar sesion con tu cuenta</h2>
       <input type="text" placeholder="&#128272 Usuario" name="username" required value=$username>
@@ -28,13 +29,9 @@ class FormularioLogin extends Form {
       <input type="submit" value="Ingresar">
       <a id="reg" href="recordar.php">Recordar contraseña</a>
 
-    </form>
+      <a id="create" href="recordar.php">Crear cuenta</a>
 
 
-      <form class ="formB" method="get" action="registro.php" >
-      <h3> ¿ Nuevo en ABCine ? </h3>
-       <input type="submit" value="Crear cuenta">
-      </form>
 EOF;
     return $camposFormulario;
   }
@@ -42,7 +39,8 @@ EOF;
 
 
   protected function procesaFormulario($datos) {
-
+    print_r ($datos);
+    echo "hola";
     $result = array();
     $ok = true;
     $username = isset($datos['username']) ? $datos['username'] : null ;
@@ -68,11 +66,12 @@ EOF;
         // SEGURIDAD: Forzamos que se genere una nueva cookie de sesión por si la han capturado antes de hacer login
         session_regenerate_id(true);
         App::getSingleton()->login($user);
-        $result = \es\ucm\fdi\aw\App::getSingleton()->resuelve('/index.php');
+       $result = \es\ucm\fdi\aw\App::getSingleton()->resuelve('/index.php');
       }else {
         $result[] = 'El usuario o la contraseña es incorrecta';
       }
     }
+    print_r( $result);
     return $result;
   }
 }
