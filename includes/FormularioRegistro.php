@@ -28,7 +28,7 @@ class FormularioRegistro extends Form {
   					<input type="email" 	 	name="emailAlt" placeholder="Dirección de correo alternativa" class="in100" required value=$dirAlternativa>
 					<input type="submit" 	value="Registrar"  class="btn-enviar" required >
 
-					<p class ="p-linker"> � Tienes una cuenta ? <a href="login.php"> Ingresa aqui</a></p>
+					<p class ="p-linker"> ¿ Tienes una cuenta ? <a href="login.php"> Ingresa aqui</a></p>
 
 				</div>
 
