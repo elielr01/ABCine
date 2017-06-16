@@ -72,19 +72,20 @@ require_once __DIR__.'/includes/config.php';
 
 			<div class="cabece"><h2>Nuestras Promociones</h></div>
 			<div class="promo">
-				<a href="#"><img src="IMG/promo1.jpg"/></a>
+				<a href="promociones-detalle1.php"><img src="IMG/promo1.jpg"/></a>
 			</div>
 			<div class="promo">
-				<a href="#"><img src="IMG/promo2.jpg"/></a>
+				<a href="promociones-detalle2.php"><img src="IMG/promo2.jpg"/></a>
 			</div>
 			<div class="promo">
-				<a href="#"><img src="IMG/promo3.jpg"/></a>
+				<a href="promociones-detalle3.php"><img src="IMG/promo3.jpg"/></a>
 			</div>
 			<div class="promo">
-				<a href="#"><img src="IMG/promo4.jpg"/></a>
+				<a href="promociones-detalle4.php"><img src="IMG/promo4.jpg"/></a>
 			</div>
 			<div class="promo">
-				<a href="#"><img src="IMG/promo5.jpg"/></a>
+				<a href="promociones-detalle5.php"><img src="IMG/promo5.jpg"/></a>
+			
 			</div>
       
 		</article>
