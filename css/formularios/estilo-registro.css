@@ -51,12 +51,23 @@ input{
 
 	width: 100%;
 }
+.campoEmail{
 
+	width: 75%;
+}
 
 .in50{
 
 	width: 40%;
 
+}
+.noimg1{
+	
+}
+img{
+	width:15px;
+	height:15px;
+	display:none;
 }
 
 
