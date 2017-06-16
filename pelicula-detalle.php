@@ -25,9 +25,10 @@ require_once __DIR__.'/includes/config.php';
 		 <?php
 		 
 			 $conn = $app->conexionBd();
-			  $sql = "SELECT id,nombre, urlyoutube, nombrefoto, descripcion, sinopsis
-					  FROM pelicula
-					  WHERE id = ". htmlspecialchars($_GET['id']) ."";
+			 $sql = "
+					SELECT id,nombre, urlyoutube, nombrefoto, descripcion, sinopsis
+					FROM pelicula
+					WHERE id = ". htmlspecialchars($_GET['id']) .";";
 		 
 			$result = $conn->query($sql);
 			$row = $result->fetch_assoc();
@@ -61,29 +62,37 @@ require_once __DIR__.'/includes/config.php';
 			echo "<div class='containercompra'>";
 				echo "<div class='containerslector'>";
 					echo "<select>";
-						echo "<option value='cine1'>Cine1</option>";
-						echo "<option value='cine2'>Cine2</option>";
-						echo "<option value='cine3'>Cine3</option>";
-						echo "<option value='cine4'>Cine4</option>";
-						echo "<option value='cine5'>Cine5</option>";
+					
+					//muestra Cines
+					
+					$sql2 = "
+						SELECT *
+						FROM	(SELECT c.nombre
+									FROM pelicula p, funcion f, sala s, cine c
+									WHERE p.id = f.id_pelicula AND f.id_sala = s.id AND s.idCine = c.id AND p.id = ".htmlspecialchars($_GET['id']).") as temp
+						GROUP BY nombre;		
+						";
+
+					$result = $conn->query($sql2);
+	
+					if ($result->num_rows > 0) {
+						while ($row = $result->fetch_assoc()) {
+							echo "<option value='".$row['nombre']."'>".$row['nombre']."</option>";
+						}
+					}
+					
+			
 					echo "</select>";
 				echo "</div>";
 				echo "<div class='containerslector'>";
 					echo "<select>";
-						echo "<option value='cine1'>Sala1</option>";
-						echo "<option value='cine2'>Sala2</option>";
-						echo "<option value='cine3'>Sala3</option>";
-						echo "<option value='cine4'>Sala4</option>";
-						echo "<option value='cine5'>Sala5</option>";
+					
 					echo "</select>";
 				echo "</div>";
 				echo "<div class='containerslector'>";
 					echo "<select>";
-						echo "<option value='cine1'>Hora1</option>";
-						echo "<option value='cine2'>Hora2</option>";
-						echo "<option value='cine3'>Hora3</option>";
-						echo "<option value='cine4'>Hora4</option>";
-						echo "<option value='cine5'>Hora5</option>";
+			
+			
 					echo "</select>";
 				echo "</div>";
 					
