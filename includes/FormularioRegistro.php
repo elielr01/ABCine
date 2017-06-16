@@ -1,8 +1,6 @@
 <?php
 namespace es\ucm\fdi\aw;
 
-
-
 class FormularioRegistro extends Form {
 	public function __construct() {
 	$opciones['action']="index.php";
@@ -40,19 +38,25 @@ EOF;
 
 
 	protected function procesaFormulario($datos){
-
+		$user = User::searchUser(htmlspecialchars($datos['email']));
+		if($user) {
+			echo "Usuario actualmente registrado ";
+			return false;
+		}
+	
+	
 		$app = App::getSingleton();
 		$conn = $app->conexionBd();
-		$pw=password_hash($datos['pass'],PASSWORD_DEFAULT);
+		$pw=password_hash(htmlspecialchars($datos['pass']),PASSWORD_DEFAULT);
 		$sql = ("INSERT INTO usuarios (username, password,nombre,apellidos,tlf,correoAlternativo)
-		VALUES ('".$datos['email']."','".$pw."','".$datos['nombre']."','".$datos['apellidos']."','".$datos['telefono']."','".$datos['emailAlt']."')");
+		VALUES ('".htmlspecialchars($datos['email'])."','".$pw."','".htmlspecialchars($datos['nombre'])."','".htmlspecialchars($datos['apellidos'])."','".htmlspecialchars($datos['telefono'])."','".htmlspecialchars($datos['emailAlt'])."')");
 
 
 		if ($conn->query($sql) === TRUE) {
-    echo "Cuenta creada correctamente";
-		} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-		}
+			echo "Cuenta creada correctamente";
+				} else {
+			echo "Error: " . $sql . "<br>" . $conn->error;
+				}
 
 	$user = User::searchUser($datos['email']);
 	$id=$user->getId();
