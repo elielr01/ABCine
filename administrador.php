@@ -74,7 +74,7 @@ require_once __DIR__.'/includes/config.php';
 
 		</form>
 
-		<input id="botona" type="submit" value="Añadir pelicula" onclick="location.href='añadir-pelicula.html'"/>
+		<input id="botona" type="submit" value="Añadir pelicula" onclick="location.href='add-pelicula.php'"/>
 
 		</article>
 		<?php
