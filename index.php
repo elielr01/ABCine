@@ -44,7 +44,7 @@ require_once __DIR__.'/includes/config.php';
         while($row = $result->fetch_assoc()) {
 
           echo "<div class='pelicula' >";
-          echo "<a href='pelicula-detalle.php?id=".$row['id']."'> <img src='".$row['nombreFoto']."'/></a>";
+          echo "<a href='pelicula-detalle.php?id=".$row['id']."'> <img src= 'IMG/".$row['nombreFoto']."'/></a>";
           echo "</div>";
         }
       }
@@ -63,7 +63,7 @@ require_once __DIR__.'/includes/config.php';
         while($row = $result->fetch_assoc()) {
 
           echo "<div class='pelicula' >";
-          echo "<a href='pelicula-detalle.php?id=".$row['id']."'> <img src='".$row['nombreFoto']."'/></a>";
+          echo "<a href='pelicula-detalle.php?id=".$row['id']."'> <img src= 'IMG/".$row['nombreFoto']."'/></a>";
           echo "</div>";
         }
       }
