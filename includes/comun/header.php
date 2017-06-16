@@ -28,10 +28,12 @@
 					
 					<li> <a href="promociones-principal.php"><i class="fa fa-users"></i>Promociones</a>
 						<ul>
-							<li> <a href="promociones-detalle.php"><i class="fa fa-map-marker"></i>Promocion1</a></li>
-							<li> <a href="promociones-detalle.php"><i class="fa fa-map-marker"></i>Promocion2</a></li>
-							<li> <a href="promociones-detalle.php"><i class="fa fa-map-marker"></i>Promocion3</a></li>
-							<li> <a href="promociones-detalle.php"><i class="fa fa-map-marker"></i>Promocion4</a></li>
+							<li> <a href="promociones-detalle1.php"><i class="fa fa-map-marker"></i>Promocion1</a></li>
+							<li> <a href="promociones-detalle2.php"><i class="fa fa-map-marker"></i>Promocion2</a></li>
+							<li> <a href="promociones-detalle3.php"><i class="fa fa-map-marker"></i>Promocion3</a></li>
+							<li> <a href="promociones-detalle4.php"><i class="fa fa-map-marker"></i>Promocion4</a></li>
+							<li> <a href="promociones-detalle5.php"><i class="fa fa-map-marker"></i>Promocion5</a></li>
+							
 						</ul>
 					</li>
 					<li> <a href="user.php"><i class="fa fa-user-o"></i>Usuario</a></li>
