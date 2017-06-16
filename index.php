@@ -20,8 +20,7 @@ require_once __DIR__.'/includes/config.php';
 		?>
 
 		<article>
-      <?php
-       ?>
+
 			<div class="slide">
 				<ul>
 					<li><a href="#"><img class="slideImg" src="IMG/slide1.jpg" style="width:100%"></a></li>
@@ -30,76 +29,47 @@ require_once __DIR__.'/includes/config.php';
 				</ul>
 			</div>
 
- 
+
 			<div class="cabece"><h2>Peliculas en cartelera</h></div>
-			<div class="pelicula" >
-				<a href="pelicula-detalle.php"> <img  src="IMG/kkong.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				 <a href="pelicula-detalle.php"><img src="IMG/mult.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/life.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				 <a href="#"><img src="IMG/logan.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/zonahostil.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/byb.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/ff.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/eptb.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/cb.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/gi.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/muralla.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/cantabrico.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/bat.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/power.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/babyb.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/memp.jpg"/></a>
-			</div>
+
+      <?php
+      $conn = $app->conexionBd();
+      $sql = "SELECT *
+              FROM Pelicula
+              WHERE comun = 1 AND preestreno = 0";
+      $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+        // output data of each row
+
+        while($row = $result->fetch_assoc()) {
+
+          echo "<div class='pelicula' >";
+          echo "<a href='pelicula-detalle.php?id=".$row['id']."'> <img src='".$row['nombreFoto']."'/></a>";
+          echo "</div>";
+        }
+      }
+      ?>
 
 			<div class="cabece"><h2>Proximos Estrenos</h></div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/rey.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				 <a href="#"><img src="IMG/gits.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/GGvol2.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				 <a href="pelicula-detalle.php"><img src="IMG/ww.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				<a href="#"><img src="IMG/jl.jpg"/></a>
-			</div>
-			<div class="pelicula">
-				 <a href="#"><img src="IMG/swviii.jpg"/></a>
-			</div>
+
+      <?php
+      $sql = "SELECT *
+              FROM Pelicula
+              WHERE preestreno = 1";
+      $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+        // output data of each row
+
+        while($row = $result->fetch_assoc()) {
+
+          echo "<div class='pelicula' >";
+          echo "<a href='pelicula-detalle.php?id=".$row['id']."'> <img src='".$row['nombreFoto']."'/></a>";
+          echo "</div>";
+        }
+      }
+
+      ?>
+
 			<div class="cabece"><h2>Nuestras Promociones</h></div>
 			<div class="promo">
 				<a href="#"><img src="IMG/promo1.jpg"/></a>
@@ -116,6 +86,7 @@ require_once __DIR__.'/includes/config.php';
 			<div class="promo">
 				<a href="#"><img src="IMG/promo5.jpg"/></a>
 			</div>
+      
 		</article>
 		<?php
 		$app->doInclude('comun/footer.html');
