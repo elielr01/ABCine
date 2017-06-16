@@ -5,6 +5,8 @@ namespace es\ucm\fdi\aw;
 
 class FormularioRegistro extends Form {
 	public function __construct() {
+	$opciones['action']="index.php";
+	
     parent::__construct('formRegistro');
   }
 
@@ -17,22 +19,20 @@ class FormularioRegistro extends Form {
 	$dirAlternativa='';
 	$nombreFoto='pic.jgp';
     $camposFormulario=<<<EOF
-   <form class="form-registro"  action="index.php" onsubmit="mgs()">
 	<h2 class ="form-titulo">Crea tu cuenta ABCine</h2>
       <div class="inputs">
 					<input type="text"  	name="nombre" placeholder="Nombre" class="in100" required value=$nombre>
 					<input type="text"  	name="apellidos" placeholder="Apellidos" class="in100" required value=$apellidos>
-					<input type="email" 	name="email" placeholder="Correo electrónico" class="in100" required value=$username>
+					<input type="email" 	name="email" placeholder="Correo electrónico" class="campoEmail" required value=$username><img class="noimg1" src="IMG/no.png"/><img class="okimg1" src="IMG/ok.png"/>
 					<input type="password"  name="pass" placeholder="Contraseña" class="in50" required value=$password>
 					<input type="text" 	 	name="telefono" placeholder="Teléfono" class="in50" required value=$tlf>
-  					<input type="email" 	 	name="emailAlt" placeholder="Dirección de correo alternativa" class="in100" required value=$dirAlternativa>
+  					<input type="email" 	name="emailAlt" placeholder="Dirección de correo alternativa" class="in101" required value=$dirAlternativa>
 					<input type="submit" 	value="Registrar"  class="btn-enviar" required >
 
 					<p class ="p-linker"> ¿ Tienes una cuenta ? <a href="login.php"> Ingresa aqui</a></p>
 
 				</div>
-
-			</form>
+				
 EOF;
     return $camposFormulario;
   }
