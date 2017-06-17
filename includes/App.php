@@ -51,6 +51,8 @@ class App {
     $_SESSION['nombre']= $user->getNombre();
     $_SESSION['altEmail']= $user->getAltEmail();
     $_SESSION['apellidos']= $user->getApellidos();
+    $_SESSION['foto'] = $user->getFoto();
+    $_SESSION['id'] = $user->getId();
   }
 
   public function logout() {
@@ -62,6 +64,8 @@ class App {
     unset($_SESSION["nombre"]);
     unset($_SESSION["altEmail"]);
     unset($_SESSION["apellidos"]);
+    unset($_SESSION['foto'])
+    unset($_SESSION['id'])
 
 
     session_destroy();
