@@ -25,7 +25,7 @@ EOF;
     $result = array();
     $dir = getcwd();
     $target_dir = $dir . "/userFolder/IMG/";
-    $_FILES['fileToUpload']['name'] = $_SESSION['username'] . ".jpg";
+    $_FILES['fileToUpload']['name'] = $_SESSION['id'] . ".jpg";
 
     $target_file = $target_dir . basename($_FILES["fileToUpload"]['name']);
     $uploadOk = 1;
@@ -64,6 +64,23 @@ EOF;
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+            $app = App::getSingleton();
+            $conn = $app->conexionBd();
+            $user = User::searchUser(htmlspecialchars($_SESSION['username']));
+            $id =$user->getId();
+
+
+            $query = "UPDATE usuarios SET foto = $id  WHERE id = $id" ;
+
+
+
+            if ($conn->query($query) === TRUE) {
+            echo "Record updated successfully";
+            $_SESSION['foto']=$id;
+            } else {
+            echo "Error updating record: " . $conn->error;
+            }
+
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
