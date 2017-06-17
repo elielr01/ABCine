@@ -64,8 +64,8 @@ class App {
     unset($_SESSION["nombre"]);
     unset($_SESSION["altEmail"]);
     unset($_SESSION["apellidos"]);
-    unset($_SESSION['foto'])
-    unset($_SESSION['id'])
+    unset($_SESSION['foto']);
+    unset($_SESSION['id']);
 
 
     session_destroy();
