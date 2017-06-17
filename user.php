@@ -28,7 +28,23 @@ require_once __DIR__.'/includes/config.php';
       ?>
       <div class="profilePicture">
         <div class="pic">
-          <img src="IMG/pic.jpg" alt="img" id="picture">
+
+          <?php
+
+            if($_SESSION['foto'] != "static.jpg"){
+              $var =".jpg";
+              $foto ="";
+              $foto = "userFolder/IMG/" . $_SESSION['foto'] . $var;
+            }else{
+              $foto = "";
+              $foto = "IMG/static.jpg";
+            }
+            ?>
+          <img src="<?php
+
+          echo  $foto ;
+
+          ?>"  alt="img" id="picture" height="184" width="289">
         </div>
       </div>
 
@@ -36,18 +52,18 @@ require_once __DIR__.'/includes/config.php';
       <ul>
         <li> Nombre</li>
         <li> Apellidos</li>
-        <li>  Fecha de Nacimiento </li>
-        <li> Puntos </li>
+        <li>  Teléfono </li>
+        <li> Email </li>
         <li><a  href="uploadPhoto.php"></i> Cambiar foto de perfil</a></li>
         <li><a  href="#"></i>Cambiar contraseña </a></li>
       </ul>
         </div>
 
       <div class="info">
-        <li> Paquito </li>
-        <li> Perez</li>
-        <li>  27/7/1993 </li>
-        <li> 15000 </li>
+        <li> <?php echo $_SESSION['nombre'] ?> </li>
+        <li> <?php echo $_SESSION['apellidos'] ?></li>
+        <li>  <?php echo $_SESSION['tlf'] ?> </li>
+        <li> <?php echo $_SESSION['username'] ?> </li>
 		<?php
         if(isset($_SESSION['login']) && $_SESSION['login'] == true && $app->tieneRol('admin', '', '')){
             echo <<<END
