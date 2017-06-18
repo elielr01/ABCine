@@ -1,12 +1,16 @@
 <?php
 
 	namespace es\ucm\fdi\aw;
-if( $_GET["user"]  ){
+	require_once __DIR__.'/config.php';
 
-	 echo json_encode(array("data"=>"Disponible", "status"=>"Success"));
+	$user = User::SearchUser(htmlspecialchars($_GET['email']));
+
+if( !$user ){
+
+	 echo "Disponible";
 }
 else{
 
-	 echo json_encode(array("data"=>"Existe", "status"=>"Success"));
+	 echo "Existe";
 }
 ?>
