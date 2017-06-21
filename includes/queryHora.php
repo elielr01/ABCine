@@ -2,17 +2,15 @@
   namespace es\ucm\fdi\aw;
   require_once __DIR__.'/config.php';
 
+
   $app = App::getSingleton();
   $conn = $app->conexionBd();
-  //TODO: por hacer
-  //FIXME: no funciona esto tete
-
 
   $sql2 = "
     SELECT *
     FROM	(SELECT f.fecha
           FROM pelicula p, funcion f, sala s, cine c
-          WHERE p.id = f.id_pelicula AND f.id_sala =".htmlspecialchars($_GET['sala'])."  AND s.idCine = c.id AND p.id = ".htmlspecialchars($_GET['id']).") as temp
+          WHERE p.id = f.id_pelicula AND f.id_sala =".htmlspecialchars($_POST['sala'])."  AND s.idCine = c.id AND p.id = ".htmlspecialchars($_POST['id']).") as temp
     GROUP BY fecha;
     ";
 
@@ -27,6 +25,8 @@
       }
     }
 
+  $result->free();
   echo implode(";", $send);
+
 
  ?>
