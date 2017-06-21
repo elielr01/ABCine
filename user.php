@@ -43,6 +43,7 @@ require_once __DIR__.'/includes/config.php';
 
           ?>"  alt="img" id="picture" height="184" width="289">
         </div>
+	<h><?php echo $_SESSION['username']?><h>
       </div>
 
         <div class="user">
