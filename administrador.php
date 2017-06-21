@@ -10,45 +10,28 @@ require_once __DIR__.'/includes/config.php';
     <link rel="stylesheet" href="css/footerHeader/estilo.css">
 
   </head>
-
-
 	<body>
 		<?php
 			$app->doInclude('comun/header.php');
 		?>
-
 		<article id=main>
 		<?php
 			if ($app->tieneRol('admin', 'Acceso Denegado', 'No tienes permisos suficientes para administrar la web.')) {
 		?>
   		<h1 class ="titulo">Pantalla administrador </h1>
-
-
-
-
+		<ul class="listado">
+  				<li class ="cont">Lista de usuarios activos</li>
+		</ul>
+ 
+		<textarea name="name" readonly="readonly"><?php $app->doInclude('querySearchForBan.php') ?></textarea>
       <?php $formBaneo = new \es\ucm\fdi\aw\FormularioBaneo();
         $formBaneo->gestiona();
       ?>
-
-
-
-
-      <textarea name="name" rows="8" cols="80">
-        <?php $app->doInclude('querySearchForBan.php') ?>
-        </textarea>
-
-
-
-
-
-
+     
 
 		<form class = "quitar"  action="index.html"  onsubmit="mgsa()" >
-
-  			<ul>
-
+			<ul class="listado">
   				<li class ="cont">Quitar peliculas</li>
-
   					<select name="peliculas"  required>
   					<option value="pelicula1" >Kong</option>
   					<option value="pelicula2" >Multiple</option>
@@ -74,21 +57,15 @@ require_once __DIR__.'/includes/config.php';
   					<option value="cine4" >Cine 4</option>
   					<option value="cine5" >Cine 5</option>
   					</select>
-
+					
 					<select name="sala"  required>
   					<option value="sala1" >Sala 1</option>
   					<option value="sala2" >Sala 2</option>
   					<option value="sala3" >Sala 3</option>
-
   					</select>
-
-
 					<input type="submit" value="Quitar"/>
-
 			</ul>
-
 		</form>
-
 		<input id="botona" type="submit" value="Añadir pelicula" onclick="location.href='add-pelicula.php'"/>
 
 		</article>
