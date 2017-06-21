@@ -22,9 +22,6 @@ require_once __DIR__.'/includes/config.php';
 
       <?php
         if ($app->tieneRol('user', 'Acceso Denegado', 'Necesitas estar logueado.')) {
-
-
-
       ?>
       <div class="profilePicture">
         <div class="pic">
@@ -73,11 +70,12 @@ END;
           ?>
       </div>
 
+      <?php
+      }
+      ?>
 		</article>
 
-    <?php
-    }
-    ?>
+
     <?php
     $app->doInclude('comun/footer.html');
     ?>

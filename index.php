@@ -33,40 +33,13 @@ require_once __DIR__.'/includes/config.php';
 			<div class="cabece"><h2>Peliculas en cartelera</h></div>
 
       <?php
-      $conn = $app->conexionBd();
-      $sql = "SELECT *
-              FROM Pelicula
-              WHERE comun = 1 AND preestreno = 0";
-      $result = $conn->query($sql);
-      if ($result->num_rows > 0) {
-        // output data of each row
-
-        while($row = $result->fetch_assoc()) {
-
-          echo "<div class='pelicula' >";
-          echo "<a href='pelicula-detalle.php?id=".$row['id']."'> <img src= 'IMG/".$row['nombreFoto']."'/></a>";
-          echo "</div>";
-        }
-      }
+        $app->doInclude('queryViewCommonFilms.php');
       ?>
 
 			<div class="cabece"><h2>Proximos Estrenos</h></div>
 
       <?php
-      $sql = "SELECT *
-              FROM Pelicula
-              WHERE preestreno = 1";
-      $result = $conn->query($sql);
-      if ($result->num_rows > 0) {
-        // output data of each row
-
-        while($row = $result->fetch_assoc()) {
-
-          echo "<div class='pelicula' >";
-          echo "<a href='pelicula-detalle.php?id=".$row['id']."'> <img src= 'IMG/".$row['nombreFoto']."'/></a>";
-          echo "</div>";
-        }
-      }
+        $app->doInclude('queryPremierFilm.php')
 
       ?>
 
@@ -85,9 +58,9 @@ require_once __DIR__.'/includes/config.php';
 			</div>
 			<div class="promo">
 				<a href="promociones-detalle5.php"><img src="IMG/promo5.jpg"/></a>
-			
+
 			</div>
-      
+
 		</article>
 		<?php
 		$app->doInclude('comun/footer.html');

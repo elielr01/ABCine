@@ -23,103 +23,44 @@ require_once __DIR__.'/includes/config.php';
 		<article>
 
 		 <?php
+        $app->doInclude('queryInfoFilm.php');
+			?>
 
-			 $conn = $app->conexionBd();
-			 $sql = "
-					SELECT id,nombre, urlyoutube, nombrefoto, descripcion, sinopsis
-					FROM pelicula
-					WHERE id = ". htmlspecialchars($_GET['id']) .";";
+     <select id='father'>
 
-			$result = $conn->query($sql);
-			$row = $result->fetch_assoc();
+       <?php $app->doInclude('queryCines.php'); ?>
 
 
-
-			echo "<div class='enlacecab'><p> AB</p></div>";
-			echo "<div class='titulocab'><h3>" . $row['nombre'] . "</h3></div>";
-			echo "<div class='enlacecab'><p> CINES</p></div>";
-
-			echo "<div class='media'>";
-				echo "<div class='cartel'>";
-					echo "<img src= 'IMG/". $row['nombrefoto'] . "'/>";
-				echo "</div>";
-
-				echo "<div class='trailer'>";
-					echo "<iframe width='420' height='320' src = '". $row['urlyoutube']."' > </iframe>";
-				echo "</div>";
-			echo "</div>";
-
-
-			echo "<div class='resumen'>";
-				echo  $row['descripcion'];
-			echo "</div>";
-
-
-			echo "<div class='sinopsis'>";
-				echo"<p>Sinopsis: " .  $row['sinopsis'] . " </p>";
-			echo "</div>";
-
-			echo "<div class='containercompra'>";
-				echo "<div class='containerslector'>";
-					echo "<select id='father'>";
-
-					//muestra Cines
-
-          $conn = $app->conexionBd();
-          $sql2 = "
-            SELECT *
-            FROM	(SELECT c.nombre
-                  FROM pelicula p, funcion f, sala s, cine c
-                  WHERE p.id = f.id_pelicula AND f.id_sala = s.id AND s.idCine = c.id AND p.id = ".htmlspecialchars($_GET['id']).") as temp
-            GROUP BY nombre;
-            ";
-
-          $result = $conn->query($sql2);
-
-          if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-              echo "<option value='".$row['nombre']."'>".$row['nombre']."</option>";
-            }
-          }
-
-					echo "</select>";
+			</select>
 
 
 
-        // Muestra salas
-				echo "</div>";
-				echo "<div class='containerslector'>";
-					echo "<select id='child1'>";
-					echo "</select>";
+			</div>
+			 <div class='containerslector'>
+				 <select id='child1'>
+				 </select>
 
 
-
-        // Muestra horas
-				echo "</div>";
-				echo "<div class='containerslector'>";
-					echo "<select id='child2'>";
+			 </div>
+			 <div class='containerslector'>
+				 <select id='child2'>
 
 
-					echo "</select>";
+				 </select>
+
+			 </div>
+				 <div class='containerboton'>
+				 <a href='checkout.php'>COMPRAR</a>
+			 </div>
+			 </div>
+		</article>
 
 
-
-
-
-				echo "</div>";
-					echo "<div class='containerboton'>";
-					echo "<a href='checkout.php'>COMPRAR</a>";
-				echo "</div>";
-			echo "</div>";
-
-		echo"</article>";
-
-		?>
 
 		  <?php
 		$app->doInclude('comun/footer.html');
 		?>
-    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="js/selector.js"></script>
 
 	</body>
