@@ -5,22 +5,22 @@
 
   $app = App::getSingleton();
   $conn = $app->conexionBd();
-
+  $cine = $_POST['cine'];
+  $id = $_POST['id'];
+  $sala = $_POST['sala'];
   $sql2 = "
-    SELECT *
-    FROM	(SELECT f.fecha
-          FROM pelicula p, funcion f, sala s, cine c
-          WHERE p.id = f.id_pelicula AND f.id_sala =".htmlspecialchars($_POST['sala'])."  AND s.idCine = c.id AND p.id = ".htmlspecialchars($_POST['id']).") as temp
-    GROUP BY fecha;
+  SELECT f.fecha
+FROM funcion f , sala s , cine c
+WHERE id_pelicula='$id' AND s.numSala='$sala' and c.nombre='$cine' and f.id_sala=s.id and s.idCine=c.id
     ";
 
   $result = $conn->query($sql2);
-
+  //echo $sql2;
   $send = array();
 
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
-        $dat = date('D / F / G  ',strtotime($row['fecha']));
+        $dat = date('j / F / G : i  A',strtotime($row['fecha']));
         array_push($send, $dat);
       }
     }
