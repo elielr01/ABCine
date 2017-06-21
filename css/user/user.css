@@ -1,67 +1,98 @@
 .user li {
   list-style-type: none;
-  background:darkGrey;
+  background:#141526;
   text-align: center;
   margin:4px;
   margin-left: 5px;
   border-radius: 10px;
   width: 350px;
-  color: black;
-  border: 2px solid #4CAF50;
+  color: #686a83;
+  border: 2px solid #141526; 
 }
 
 .user{
   display:-webkit-inline-box;
-  font-size: 25px;
+  font-size: 20px;
   position: relative;
+  
+  float:left;
+  clear: both;
+  
 
 }
 
 article{
-	background: white !important;
-	padding-bottom: 18% !important;
+	background: #f6f5f2;
+	padding:0px;
 }
 
 .user a {
   text-decoration: none;
-  color: LightSlateGrey  ;
+  color:#fff38e;
+
+}
+.user a:hover{
+
+  color:white;
 
 }
 
 .profilePicture{
+  background:#141526;
   display: inline-block;
+  width:100%;
+  clear: both;
+  border-radius: 10px;
 
 }
+.profilePicture h{
+	color:white;
+	float:left;
+	font-size: 30px;
+	padding-top:70px;
+	padding-left:20px;
+	text-align: center;
+}
 #picture{
-  border-radius: 30%;
+  border-radius:10%;
   border: 3px solid black;
+  
 }
 
 .info {
+
   position:absolute;
   text-decoration: none;
   display:inline-block;
-  font-size: 25px;
+  font-size: 20px;
+  float:left;
 }
 
 .info ul{
 
 
 }
+
 .info li{
   list-style-type: none;
-  background:darkGrey;
+  background:#fff38e;
   text-align: center;
   margin:4px;
   margin-left: 5px;
   border-radius: 10px;
   width: 350px;
-  color: black;
-  border: 2px solid DarkBlue  ;
+  color: #141526;
+  border: 2px solid #141526;
 }
-
+.vacio{
+  display:none;
+}
+.pic{
+	float:left;
+	
+}
 @media screen and (max-width : 1150px){
-	 img{
+.profilePicture{
     display: none;
   }
 }
