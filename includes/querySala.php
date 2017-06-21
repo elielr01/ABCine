@@ -4,15 +4,14 @@
 
   $app = App::getSingleton();
   $conn = $app->conexionBd();
-  //TODO: por hacer
-  //FIXME: no funciona esto tete
 
-  $cine = $_GET['cine'];
+
+  $cine = htmlspecialchars($_POST['cine']);
   $sql2 = "
     SELECT *
     FROM	(SELECT s.numSala
           FROM pelicula p, funcion f, sala s, cine c
-          WHERE p.id = f.id_pelicula AND f.id_sala = s.id AND c.nombre='". $cine. "' AND s.idCine = c.id AND p.id = ".htmlspecialchars($_GET['pelicula']).") as temp
+          WHERE p.id = f.id_pelicula AND f.id_sala = s.id AND c.nombre='". $cine. "' AND s.idCine = c.id AND p.id = ".htmlspecialchars($_POST['pelicula']).") as temp
     GROUP BY numSala;
     ";
 
@@ -25,6 +24,8 @@
       }
     }
 
+  $result->free();
   echo implode(";", $send);
+
 
  ?>
