@@ -11,8 +11,9 @@ Class User {
   private $activo;
   private $apellidos;
   private $altEmail;
+  private $foto;
 
-  private function __construct($id,$username,$password,$nombre,$tlf,$apellidos,$altEmail,$activo){
+  private function __construct($id,$username,$password,$nombre,$tlf,$apellidos,$altEmail,$activo,$foto){
     $this->id = $id;
     $this->username = $username;
     $this->password = $password;
@@ -22,8 +23,11 @@ Class User {
     $this->rol = [];
     $this->nombre = $nombre;
     $this->activo= $activo;
+    $this->foto=$foto;
   }
-
+  public function getFoto(){
+    return $this->foto;
+  }
   public function getActivo(){
     return $this->activo;
   }
@@ -93,7 +97,7 @@ Class User {
 
     if ($rs && $rs->num_rows == 1) {
       $fila = $rs->fetch_assoc();
-      $user = new User($fila['id'], $fila['username'], $fila['password'],$fila['nombre'],$fila['tlf'],$fila['apellidos'],$fila['correoAlternativo'],$fila['activo']);
+      $user = new User($fila['id'], $fila['username'], $fila['password'],$fila['nombre'],$fila['tlf'],$fila['apellidos'],$fila['correoAlternativo'],$fila['activo'],$fila['foto']);
       $rs->free();
       return $user;
     }

@@ -4,7 +4,7 @@ namespace es\ucm\fdi\aw;
 class FormularioRegistro extends Form {
 	public function __construct() {
 	$opciones['action']="index.php";
-	
+
     parent::__construct('formRegistro');
   }
 
@@ -30,7 +30,7 @@ class FormularioRegistro extends Form {
 					<p class ="p-linker"> ¿ Tienes una cuenta ? <a href="login.php"> Ingresa aqui</a></p>
 
 				</div>
-				
+
 EOF;
     return $camposFormulario;
   }
@@ -43,8 +43,8 @@ EOF;
 			echo "Usuario actualmente registrado ";
 			return false;
 		}
-	
-	
+
+
 		$app = App::getSingleton();
 		$conn = $app->conexionBd();
 		$pw=password_hash(htmlspecialchars($datos['pass']),PASSWORD_DEFAULT);
@@ -60,7 +60,7 @@ EOF;
 
 	$user = User::searchUser($datos['email']);
 	$id=$user->getId();
-	
+
 	$sql = ("INSERT INTO rolesusuario (usuario,rol)
 	VALUES('".$id."','1')");
 
@@ -69,6 +69,7 @@ EOF;
 	} else {
 	echo "Error: " . $sql . "<br>" . $conn->error;
 	}
+
 	return false;
 	}
 
