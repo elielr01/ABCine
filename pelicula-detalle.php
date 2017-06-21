@@ -11,6 +11,7 @@ require_once __DIR__.'/includes/config.php';
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8" />
 	<link rel="stylesheet" href="css/footerHeader/estilo.css">
+
   </head>
 
 
@@ -60,6 +61,7 @@ require_once __DIR__.'/includes/config.php';
 		  <?php
 		$app->doInclude('comun/footer.html');
 		?>
+
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="js/selector.js"></script>
 

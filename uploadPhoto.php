@@ -20,7 +20,7 @@ require_once __DIR__.'/includes/config.php';
 
 		<article >
       <?php
-        if ($app->tieneRol('user', 'Acceso Denegado', 'Necesitas estar logueado.')) {
+          if ($app->tieneRol('admin', '', '') || $app->tieneRol('user', '', 'Neceistas estar logueado') ){
       ?>
 
       <?php $formFoto = new \es\ucm\fdi\aw\FormularioFoto();
