@@ -13,10 +13,9 @@ class FormularioBaneo extends Form {
 
     $camposFormulario=<<<EOF
 		<form action="" method="POST" >
-  			<ul>
+  			<ul class="listado">
   				<li class ="cont">Banear usuario</li>
 					<input type="email" name="username" placeholder="Correo electronico" class="in100" value=$username>
-
 					<input class="ban" type="submit" name="ban1" value="Banear"/>
 
 			</ul>
