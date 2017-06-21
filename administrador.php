@@ -23,9 +23,24 @@ require_once __DIR__.'/includes/config.php';
 		?>
   		<h1 class ="titulo">Pantalla administrador </h1>
 
+
+
+
       <?php $formBaneo = new \es\ucm\fdi\aw\FormularioBaneo();
         $formBaneo->gestiona();
       ?>
+
+
+
+
+      <textarea name="name" rows="8" cols="80">
+        <?php $app->doInclude('querySearchForBan.php') ?>
+        </textarea>
+
+
+
+
+
 
 
 		<form class = "quitar"  action="index.html"  onsubmit="mgsa()" >
