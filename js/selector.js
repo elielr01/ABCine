@@ -1,18 +1,27 @@
+
+
+
 $("#father").on("change", function() {
 	getSalas();
-  getHoras();
+
 });
 
 $("#child1").on("change", function() {
 	getHoras();
 });
 
+
 $( document ).ready(function() {
   getSalas();
-  getHoras();
+
+
+
 });
 
-function getSalas(){
+
+
+
+function getSalas(callback){
   var cinema = $("#father").val();
 
   var urlHref = window.location.href;
@@ -29,7 +38,7 @@ function getSalas(){
     pelicula: idPelicula
   };
 
-  var request = $.ajax({
+  $.ajax({
         url: ruta + "/includes/querySala.php",
         type: "post",
         data: datos,
@@ -45,8 +54,9 @@ function getSalas(){
               value: currentValue,
               text: currentValue
             }));
-
           });
+		  typeof callback === 'function' && callback(); // CUANDO LA PETICION HAYA ACABADO LLAMA A LA FUNCION QUE SE LE PASA POR ARGUMENTO
+			getHoras();
         },
 
         error: function() {
@@ -56,10 +66,12 @@ function getSalas(){
 }
 
 
-function getHoras(){
+function getHoras(callback){
+
+	//debugger;
 
   var idSala = document.getElementById("child1").value;
-
+	var idCine = document.getElementById("father").value;
   var urlHref = window.location.href;
   var urlReferrer = document.referrer;
 
@@ -71,11 +83,12 @@ function getHoras(){
 
   var datos = {
     id: idPelicula,
-    sala: idSala
+    sala: idSala,
+		cine : idCine
   };
 
 
-  var request = $.ajax({
+  $.ajax({
         url: ruta + "/includes/queryHora.php",
         type: "post",
         data: datos,
@@ -93,10 +106,11 @@ function getHoras(){
             }));
 
           });
+		  typeof callback === 'function' && callback();
         },
 
         error: function() {
-          alert('p0rp0c0');
+          alert('Error');
         }
   });
 
