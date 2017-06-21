@@ -31,7 +31,7 @@ function getSalas(){
 
   var request = $.ajax({
         url: ruta + "/includes/querySala.php",
-        type: "get",
+        type: "post",
         data: datos,
         success: function(response) {
           var responseSplit = response.split(';');
@@ -50,7 +50,7 @@ function getSalas(){
         },
 
         error: function() {
-          alert('p0rp0c0');
+          alert('Error');
         }
   });
 }
@@ -59,9 +59,6 @@ function getSalas(){
 function getHoras(){
 
   var idSala = document.getElementById("child1").value;
-
-
-  console.log(idSala);
 
   var urlHref = window.location.href;
   var urlReferrer = document.referrer;
@@ -80,7 +77,7 @@ function getHoras(){
 
   var request = $.ajax({
         url: ruta + "/includes/queryHora.php",
-        type: "get",
+        type: "post",
         data: datos,
         success: function(response) {
 
