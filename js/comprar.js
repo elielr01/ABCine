@@ -2,10 +2,10 @@
      
     var idSala = document.getElementById("child1").value;
 	var idCine = document.getElementById("father").value;
-    var idFecha = document.getElementById("child2").value;
+    var idFecha = $('#child2 option:selected').attr('id');
     var urlHref = window.location.href;
     var urlReferrer = document.referrer;
- 
+   
 
     var getId = urlHref.lastIndexOf("id=");
     var idPelicula = urlHref.split("=")[1];
@@ -17,7 +17,7 @@
     id: idPelicula,
     sala: idSala,
 	cine : idCine,
-    fecha : idFecha
+    fun : idFecha
     };
 
    
@@ -31,8 +31,7 @@
             
             if(response=="error"){
                 alert("Necesitas tener una cuenta para comprar entradas");
-            }else{
-            alert(response);     
+            }else{   
             window.location.href = ruta+"/checkout.php?id=" + idPelicula; 
             } 
         }

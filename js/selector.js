@@ -18,8 +18,6 @@ $( document ).ready(function() {
 
 
 
-
-
 function getSalas(callback){
   var cinema = $("#father").val();
 
@@ -92,19 +90,20 @@ function getHoras(callback){
         type: "post",
         data: datos,
         success: function(response) {
-
-          var responseSplit = response.split(';');
-
+          
+          JSON.stringify(response, null, 2);
           $('#child2').empty();
+          
 
-          responseSplit.forEach(function(currentValue) {
+          response.forEach(function(currentValue) {
             $('#child2').append($('<option>', {
-              id: currentValue,
-              value: currentValue,
-              text: currentValue
+              id: currentValue.id,
+              value: currentValue.fecha,
+              text: currentValue.fecha
             }));
 
           });
+          
 		  typeof callback === 'function' && callback();
         },
 
