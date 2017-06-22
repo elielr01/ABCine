@@ -14,9 +14,8 @@ $("#child1").on("change", function() {
 $( document ).ready(function() {
   getSalas();
 
-
-
 });
+
 
 
 
@@ -115,3 +114,4 @@ function getHoras(callback){
   });
 
 }
+

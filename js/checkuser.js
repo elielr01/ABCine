@@ -17,8 +17,6 @@ function verifyUser(){
 	    email:correo
 	  };
 
-
-
 		var request = $.ajax({
 	        url: urlweb,
 	        type: "get",
