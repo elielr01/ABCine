@@ -12,8 +12,6 @@ require_once __DIR__.'/includes/config.php';
     <meta charset="utf-8" />
   <link rel="stylesheet" href="css/footerHeader/estilo.css">
    <link rel="stylesheet" href="css/goup/fonts.css">
-   <script src="http://code.jquery.com/jquery-latest.js"></script>
-   <script src="js/arriba.js"></script>
   </head>
 
 
@@ -70,5 +68,8 @@ require_once __DIR__.'/includes/config.php';
 		<?php
 		$app->doInclude('comun/footer.html');
 		?>
+		
+		   <script src="http://code.jquery.com/jquery-latest.js"></script>
+   		   <script src="js/arriba.js"></script>
 	</body>
 </html>
