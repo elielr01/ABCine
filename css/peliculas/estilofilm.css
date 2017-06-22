@@ -140,7 +140,7 @@ select{
 	margin-top:5%;
 	
 } 
-.containerboton a{
+.containerboton #comprar{
     text-decoration: none;
     padding: 10px;
 	
@@ -153,7 +153,7 @@ select{
     border: 2px solid #0016b0;
 	border-radius: 6px;
   }
-  .containerboton a:hover{
+  .containerboton #comprar:hover{
 	color:#1883ba;
     background-color:white;
 	 
