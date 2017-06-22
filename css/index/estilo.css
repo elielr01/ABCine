@@ -37,6 +37,7 @@ header {
 	float:left;
 	display:flex;
 }
+
 /*********************MENU DE NAVEGACION*************************/
 nav {
 	background:#141526; 	
@@ -194,6 +195,7 @@ footer a:hover{
 	99.9% { margin-left:0%; } /* para volver a la primera imagen con el mismo tiempo de animacion*/
 	100% { margin-left:0%; }	
 }
+/********************BOTON IR ARRIBA*****************************/
 
 /*****Cabeceras de texto******/
 .cabece{
