@@ -1,3 +1,12 @@
 article {
-  background: white
+  background: #fff38e;
+  min-height:180px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+fieldset{
+	 min-height:180px;
+	 width:90%;
+	 margin-left:5%;
+	
 }
