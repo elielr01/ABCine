@@ -18,21 +18,29 @@
 					<li> <a href="films.php"><i class="fa fa-film"></i>Peliculas</a></li>
 					<li> <a href="cines-principal.php"><i class="fa fa-map-o"></i>Cines</a>
 						<ul>
-							<li> <a href="cines-detalle.php"><i class="fa fa-map-marker"></i>Cine1</a></li>
-							<li> <a href="cines-detalle.php"><i class="fa fa-map-marker"></i>Cine2</a></li>
-							<li> <a href="cines-detalle.php"><i class="fa fa-map-marker"></i>Cine3</a></li>
-							<li> <a href="cines-detalle.php"><i class="fa fa-map-marker"></i>Cine4</a></li>
-							<li> <a href="cines-detalle.php"><i class="fa fa-map-marker"></i>Cine5</a></li>
+
+
+						<?php
+							 echo "<li><a href='cines-detalle.php?id=1'><i class='fa fa-map-marker'></i>Cine1</a></li>";
+							 echo "<li> <a href='cines-detalle.php?id=2'><i class='fa fa-map-marker'></i>Cine2</a></li>";
+							 echo "<li> <a href='cines-detalle.php?id=3'><i class='fa fa-map-marker'></i>Cine3</a></li>";
+							 echo "<li> <a href='cines-detalle.php?id=4'><i class='fa fa-map-marker'></i>Cine4</a></li>";
+							 echo "<li> <a href='cines-detalle.php?id=5'><i class='fa fa-map-marker'></i>Cine5</a></li>";
+						?>
+							
 						</ul>
 					</li>
 					
 					<li> <a href="promociones-principal.php"><i class="fa fa-users"></i>Promociones</a>
 						<ul>
-							<li> <a href="promociones-detalle1.php"><i class="fa fa-map-marker"></i>Promocion1</a></li>
-							<li> <a href="promociones-detalle2.php"><i class="fa fa-map-marker"></i>Promocion2</a></li>
-							<li> <a href="promociones-detalle3.php"><i class="fa fa-map-marker"></i>Promocion3</a></li>
-							<li> <a href="promociones-detalle4.php"><i class="fa fa-map-marker"></i>Promocion4</a></li>
-							<li> <a href="promociones-detalle5.php"><i class="fa fa-map-marker"></i>Promocion5</a></li>
+						
+						<?php
+							 echo "<li><a href='promociones-detalle.php?id=1'><i class='fa fa-map-marker'></i>Promocion1</a></li>";
+							 echo "<li> <a href='promociones-detalle.php?id=2'><i class='fa fa-map-marker'></i>Promocion2</a></li>";
+							 echo "<li> <a href='promociones-detalle.php?id=3'><i class='fa fa-map-marker'></i>Promocion3</a></li>";
+							 echo "<li> <a href='promociones-detalle.php?id=4'><i class='fa fa-map-marker'></i>Promocion4</a></li>";
+							 echo "<li> <a href='promociones-detalle.php?id=5'><i class='fa fa-map-marker'></i>Promocion5</a></li>";
+						?>
 							
 						</ul>
 					</li>
