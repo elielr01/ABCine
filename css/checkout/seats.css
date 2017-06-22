@@ -37,14 +37,12 @@
 
 .seatsGroup {
   display: block;
-  vertical-align: top;
+ 
 	float: left;
 	margin: 15px;
 }
 
-.seatsGroup .column {
 
-}
 
 .seatsGroup .row {
   display: flex;
@@ -55,12 +53,14 @@
   .seat{
     font-size: 25px!important;
   }
+}
 
   @media screen and (max-width : 555px){
 
     .seat{
       font-size: 15px!important;
     }
+  }
 
     @media screen and (max-width : 450px){
 
