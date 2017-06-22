@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2017 a las 04:26:23
+-- Tiempo de generación: 22-06-2017 a las 22:05:54
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -379,7 +379,6 @@ CREATE TABLE `compra` (
   `id_butaca` int(11) NOT NULL,
   `id_funcion` int(11) NOT NULL,
   `id_promocion` int(11) NOT NULL,
-  `numEntradas` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `subtotal` decimal(10,0) NOT NULL,
   `descuento` decimal(10,0) NOT NULL,
@@ -610,7 +609,10 @@ ALTER TABLE `cine`
 -- Indices de la tabla `compra`
 --
 ALTER TABLE `compra`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_butaca` (`id_butaca`),
+  ADD KEY `id_funcion` (`id_funcion`);
 
 --
 -- Indices de la tabla `funcion`
@@ -671,17 +673,22 @@ ALTER TABLE `butaca`
 -- AUTO_INCREMENT de la tabla `butacas_en_sesion`
 --
 ALTER TABLE `butacas_en_sesion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
 -- AUTO_INCREMENT de la tabla `cine`
 --
 ALTER TABLE `cine`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT de la tabla `compra`
+--
+ALTER TABLE `compra`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT de la tabla `funcion`
 --
 ALTER TABLE `funcion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1660;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1659;
 --
 -- AUTO_INCREMENT de la tabla `pelicula`
 --
@@ -718,6 +725,14 @@ ALTER TABLE `butaca`
 ALTER TABLE `butacas_en_sesion`
   ADD CONSTRAINT `butacas_en_sesion_ibfk_1` FOREIGN KEY (`id_butaca`) REFERENCES `butaca` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `butacas_en_sesion_ibfk_2` FOREIGN KEY (`id_sesion`) REFERENCES `funcion` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `compra`
+--
+ALTER TABLE `compra`
+  ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`),
+  ADD CONSTRAINT `compra_ibfk_2` FOREIGN KEY (`id_butaca`) REFERENCES `butaca` (`id`),
+  ADD CONSTRAINT `compra_ibfk_3` FOREIGN KEY (`id_funcion`) REFERENCES `funcion` (`id`);
 
 --
 -- Filtros para la tabla `funcion`
