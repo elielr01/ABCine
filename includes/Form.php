@@ -66,9 +66,6 @@ class Form {
   public function gestiona() {
     if ( ! $this->formularioEnviado($_POST) ) {
       echo $this->generaFormulario();
-
-
-
     } else {
 
       // Valida el token CSRF si es necesario (hay un token en la sesión asociada al formulario)
@@ -80,7 +77,7 @@ class Form {
             echo $this->generaHtmlErrores($errores);
           }
       } else  {
-
+        
         $result = $this->procesaFormulario($_POST);
         if ( is_array($result) ) {
           // Error al procesar el formulario, volvemos a mostrarlo

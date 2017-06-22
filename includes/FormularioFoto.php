@@ -13,7 +13,7 @@ class FormularioFoto extends Form {
     $fileToUpload;
     $camposFormulario=<<<EOF
   	 <fieldset>
-  		  <legend>Upload</legend>
+  		  <legend>Subir foto</legend>
   		  <p><label>file:</label> <input type="file" name="fileToUpload" id="filetoUpload"/></p>
   		  <p><label>submit:</label> <input type="submit" value="Upload"/></p>
   		</fieldset>
