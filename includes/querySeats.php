@@ -20,7 +20,7 @@
     $fun= $_POST['fun'];
     
     $myfile = "../userFolder/queries/" . $_SESSION['username'] . ".json";
-    $fh = fopen($myfile,'w') or die("can't open file");
+    //$fh = fopen($myfile,'w') or die("can't open file");
 
 
     $sql2 = "SELECT b.id ,b.numbutaca , butacaS.activo , butacaS.id
@@ -43,16 +43,14 @@
     
     $result->free();
     $usr = $_SESSION['username'];
-    $infoQuery[]= array ('user'=>$usr,'id'=>$id,'sala'=>$sala,'funcion'=>$fun);
+    $infoQuery = array('usr'=>$usr,'id'=>$id,'sala'=>$sala,'funcion'=>$fun);
     $response['seat']=$infoSeat;
     $response['user']=$infoQuery;
-    
+  
 
-    //header('Content-Type: application/json');
-   // file_put_contents($fh,json_encode($response, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES));
-
-	  fwrite($fh,json_encode($response,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES));
-    fclose($fh);
-    echo ("correct");
+	  //fwrite($fh,json_encode($response,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES|JSON_NUMERIC_CHECK));
+    echo json_encode($response,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES|JSON_NUMERIC_CHECK);
+    //fclose($fh);
+    //echo ("correct");
 
   ?>
