@@ -10,13 +10,14 @@
 
 
 
-    $response=array();
+    
     $app = App::getSingleton();
     $conn = $app->conexionBd();
 
     $cine = $_POST['cine'];
     $id = $_POST['id'];
     $sala = $_POST['sala'];
+    $fun= $_POST['fun'];
     
     $myfile = "../userFolder/queries/" . $_SESSION['username'] . ".json";
     $fh = fopen($myfile,'w') or die("can't open file");
@@ -29,20 +30,29 @@
              b.idSala=s.id and f.id_pelicula='$id'
              ";
     $result = $conn->query($sql2);
-
+    
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
-        $dat = $row['numbutaca'] . ',' . $row['activo'];
-        array_push($response, $dat);
+        $numButaca = $row['numbutaca'];
+        $activo =  $row['activo'];
+        $infoSeat[] = array('butaca'=>$numButaca,'activo'=>$activo);
       }
     }
 
-    $stringData= serialize($response);
-    fwrite($fh,$stringData);
-    fclose($fh);
+    
+    
     $result->free();
     $usr = $_SESSION['username'];
-    array_push($response,$usr);
-    echo implode(";", $response);
+    $infoQuery[]= array ('user'=>$usr,'id'=>$id,'sala'=>$sala,'funcion'=>$fun);
+    $response['seat']=$infoSeat;
+    $response['user']=$infoQuery;
+    
+
+    //header('Content-Type: application/json');
+   // file_put_contents($fh,json_encode($response, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES));
+
+	  fwrite($fh,json_encode($response,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES));
+    fclose($fh);
+    echo ("correct");
 
   ?>

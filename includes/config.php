@@ -1,7 +1,7 @@
 <?php
 
 define('ROOT_PATH', __DIR__);
-define('APP_PATH', '/miweb/');
+define('APP_PATH', '/ABCine-master/');
 define('IMG_PATH', APP_PATH.'IMG/');
 define('CSS_PATH', APP_PATH.'css/');
 define('JS_PATH', APP_PATH.'js/');

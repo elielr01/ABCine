@@ -9,7 +9,7 @@
   $id = $_POST['id'];
   $sala = $_POST['sala'];
   $sql2 = "
-  SELECT f.fecha
+  SELECT f.fecha ,f.id
 FROM funcion f , sala s , cine c
 WHERE id_pelicula='$id' AND s.numSala='$sala' and c.nombre='$cine' and f.id_sala=s.id and s.idCine=c.id
     ";
@@ -21,12 +21,14 @@ WHERE id_pelicula='$id' AND s.numSala='$sala' and c.nombre='$cine' and f.id_sala
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
         $dat = date('j / F / G : i  A',strtotime($row['fecha']));
-        array_push($send, $dat);
+        $send[]=array('id'=>$row['id'],'fecha'=>$dat);
       }
     }
-
+  
+  
   $result->free();
-  echo implode(";", $send);
+  header('Content-Type: application/json');
+  echo json_encode($send, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 
 
  ?>
