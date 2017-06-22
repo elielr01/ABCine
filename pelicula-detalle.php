@@ -49,21 +49,25 @@ require_once __DIR__.'/includes/config.php';
 
 				 </select>
 
+		
 			 </div>
-				 <div class='containerboton'>
-				 <a href='checkout.php'>COMPRAR</a>
-			 </div>
-			 </div>
+
+			 <div id='comprar' class='containerboton'>
+    <input type="submit" 	value="comprar"  id="comprar"/>
+    </div>
 		</article>
 
 
 
-		  <?php
-		$app->doInclude('comun/footer.html');
-		?>
+		 
+
+    
+
+		
 
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="js/selector.js"></script>
+		<script type="text/javascript" src="js/comprar.js"></script>
 
 	</body>
 </html>

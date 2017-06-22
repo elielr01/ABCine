@@ -2,6 +2,8 @@
 
 require_once __DIR__.'/includes/config.php';
 
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,13 +23,22 @@ require_once __DIR__.'/includes/config.php';
 
 		<article>
 
+      <?php 
+        if ($app->tieneRol('admin', '', '') || $app->tieneRol('user', '', 'Neceistas estar logueado') )
+             { 
+              
+
+      ?> 
+
+      
+
       </div>
       <div class="cover">
-        <img src="IMG/ghost.jpg" alt="movieCover" width="320" height="320" >
+        <img src="<?php $app->doInclude('queryPhotoFilm.php'); ?>" alt="movieCover" width="320" height="320" >
       </div>
 
       <div class="seats" >
-          <script src="js/checkout/seats.js" ></script>
+          <script src="js/seats.js" ></script>
       </div>
       <div class="shopMenu">
         <ul>
@@ -35,9 +46,11 @@ require_once __DIR__.'/includes/config.php';
         </ul>
       </div>
 
-
+      <?php
+             }
+       ?>
 		</article>
-
+    
     <?php
 		$app->doInclude('comun/footer.html');
 		?>

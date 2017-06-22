@@ -17,14 +17,15 @@ require_once __DIR__.'/includes/config.php';
     <?php
 		$app->doInclude('comun/header.php');
 		?>
-
+	
+	
 		<article>
-
-      <?php
+		<?php
         if ($app->tieneRol('admin', '', '') || $app->tieneRol('user', '', 'Neceistas estar logueado') )
              {
 
       ?>
+      
       <div class="profilePicture">
         <div class="pic">
 
@@ -44,8 +45,10 @@ require_once __DIR__.'/includes/config.php';
           echo  $foto ;
 
           ?>"  alt="img" id="picture" height="184" width="289">
+		  </div>
+			<h><?php echo $_SESSION['username']?><h>
+		  </div>
         </div>
-	<h><?php echo $_SESSION['username']?><h>
       </div>
 
         <div class="user">
@@ -71,6 +74,7 @@ require_once __DIR__.'/includes/config.php';
 END;
         }
           ?>
+		  
       </div>
 
       <?php
@@ -78,7 +82,7 @@ END;
       ?>
 		</article>
 
-
+	
     <?php
     $app->doInclude('comun/footer.html');
     ?>
