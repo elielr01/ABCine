@@ -57,7 +57,7 @@ function getSalas(callback){
         },
 
         error: function() {
-          alert('Error');
+          alert('Error loading querys');
         }
   });
 }

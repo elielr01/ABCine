@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2017 a las 22:05:54
+-- Tiempo de generación: 22-06-2017 a las 21:20:15
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -353,21 +353,19 @@ INSERT INTO `butacas_en_sesion` (`id`, `id_butaca`, `id_sesion`, `activo`) VALUE
 
 CREATE TABLE `cine` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(50) CHARACTER SET latin1 NOT NULL,
-  `info` text COLLATE utf8_spanish_ci NOT NULL,
-  `email` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+  `nombre` varchar(50) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `cine`
 --
 
-INSERT INTO `cine` (`id`, `nombre`, `info`, `email`) VALUES
-(1, 'Cine 1', 'Direccion: Calle Atocha 13, 28012. \r\nMadrid, España.\r\nTeléfono: 665-050-054', 'cine1@abcine.com'),
-(2, 'Cine 2', 'Direccion:C/ Angosto, 7\r\n23550 Cabra del Santo Cristo\r\n\r\nTeléfono:679 534 978', 'cine2@abcine.com'),
-(3, 'Cine 3', 'Direccion:Rúa Olmos, 24\r\n37407 Palaciosrubios\r\n\r\nTeléfono:683 324 151', 'cine3@abcine.com'),
-(4, 'Cine 4', 'Direccion:C/ Manuel Iradier, 63\r\n03795 Sagra\r\n\r\nTeléfono:606 421 325', 'cine4@abcine.com'),
-(5, 'Cine 5', 'Direccion:Socampo, 98\r\n37691 Aldeanueva de la Sierra\r\n\r\nTeléfono:646 258 441', 'cine5@abcine.com');
+INSERT INTO `cine` (`id`, `nombre`) VALUES
+(1, 'Cine 1'),
+(2, 'Cine 2'),
+(3, 'Cine 3'),
+(4, 'Cine 4'),
+(5, 'Cine 5');
 
 -- --------------------------------------------------------
 
@@ -472,17 +470,6 @@ CREATE TABLE `promocion` (
   `nombreFoto` varchar(200) COLLATE utf8mb4_spanish_ci NOT NULL,
   `activo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
-
---
--- Volcado de datos para la tabla `promocion`
---
-
-INSERT INTO `promocion` (`id`, `valor`, `porcentaje`, `nombre`, `descripcion`, `nombreFoto`, `activo`) VALUES
-(1, '0', '50', 'Jueves más barato', 'DÍAS: Los jueves excepto festivos y vísperas de festivos.\r\n\r\nDÓNDE COMPRAR:Taquilla\r\n\r\n RECARGOS: Las butacas VIP, las proyecciones 3D y las salas iSens, IMAX® y Dolby tienen un recargo extra.\r\n            OTROS: Esta promoción no es aplicable a aquellas películas en cuya ficha online se especifica ‘No todas las promociones son válidas para esta película’. Promoción válida presentando tu Cinesacard activada en taquilla. Cinesa se reserva el derecho a dejar algunas películas fuera de esta promoción. Consulta en la cartelera de cinesa.es las películas en las que no se aplican promociones. Máximo cuatro entradas por tarjeta. Esta promoción no acumula puntos en los planes de fidelización ajenos a Cinesa. Las entradas compradas con Cinesacard recibirán los puntos establecidos según las condiciones legales vigentes del programa de puntos en el día y el cine de compra. Consulta las condiciones en www.cinesa.com/cinesacard. No acumula puntos en los planes de fidelización ajenos a Cinesa. No acumulable a otras ofertas. Cinesa se reserva el derecho a limitar temporalmente el uso de las entradas por causas imputables a las distribuidoras y de aplicar suplementos para ciertas películas o en fechas determinadas. No aplicable a preestrenos ni a jueves que sean festivos o vísperas de festivo. \r\n\r\nVÁLIDO HASTA: Oferta válida hasta el 19/06/2017', 'promo1.jpg', 1),
-(2, '0', '0', 'Cambia tus puntos', ' OTROS:\r\n\r\n            Los máximos puntos diarios por cliente serán 140 según el sistema de puntos por euros de consumo. Los puntos recibidos por acciones especiales serán acumulados adicionalmente, pudiendo en este caso sobrepasar el límite de 140 puntos (hasta un máximo de 1.000 puntos diarios).\r\n            ABCINE se reserva el derecho de bloqueo de otorgación de puntos y/o de la tarjeta Cinesacard en caso de detectar un posible fraude por parte del cliente. Cada cliente podrá disponer de solo una cuenta asociada a una Cinesacard en la que acumule puntos y redima sus beneficios. ABCINE no se hace responsable del uso fraudulento por parte de terceros a causa de pérdida, cesión o mal uso de la tarjeta por parte del titular de la misma. Recuerda que para el canjeo de puntos la Cinesacard debe estar activada.', 'promo2.jpg', 1),
-(3, '0', '0', 'Euro 6000 menú', 'DÍAS: Todos los días\r\n\r\nCINES: Todos los cines\r\n\r\n\r\nDÓNDE COMPRAR:Descargar cupón en la web y entregarlo en taquilla acreditándote como titular de Euro 6000\r\n\r\nRECARGOS: Las butacas VIP, proyecciones 3D y las salas IMAX e iSens tienen un recargo extra.\r\n\r\nOTROS: Disfruta con EURO 6000 de 50% de descuento en Bucket de palomitas + 75cl de refresco (todos los días) acreditándote como titular de una tarjeta Euro 6000. Máximo cuatro menús por tarjeta. En caso de que el cine no disponga de este menú, se ofrecerá uno equivalente. Oferta no válida para compras por Internet. En caso de no estar disponible se entregará el menú equivalente. \r\n           Es necesario descargar y presentar un cupón por cada menú al que se quiera aplicar la promoción.', 'promo3.jpg', 1),
-(4, '0', '0', 'La gran quedada', 'PRECIO: Precio por entrada 5\'70€ (precio online) y 6\'50€ con cupón Facebook en taquilla\r\n\r\nDÍAS: Todos los días\r\n\r\nCINES: Todos los cines ABCINE\r\n\r\nDÓNDE COMPRAR: Online o con cupón Facebook en taquilla\r\n\r\nRECARGOS: Las butacas VIP, las proyecciones 3D y las salas iSens, IMAX® y Dolby tienen un recargo extra.\r\n\r\nOTROS:\r\n\r\nComprar online: Accede a la compra online desde el botón de esta página. El icono rojo de \"promo\" te indicará dónde es válida la promoción. Elige el precio \"Gran Quedada\" y añade entre 4 y 8 entradas. Compra tus entradas y enséñalas directamente en el punto de acceso a las salas.\r\n\r\nComprar en taquilla: Crea tu cupón desde facebook para grupos de 4 a 8 amigos, imprime tu cupón y enséñalo en taquilla junto a tus amigos (y 6\'50€ con cupón Facebook en taquilla). Válido también para venta anticipada (sólo con la presencia de todas las personas que aparezcan en el cupón). Dicha promoción sólo se aplicará a las personas que aparezcan en el cupón presentado en taquilla. \r\n\r\nABCINE se reserva el derecho a dejar algunas películas fuera de esta promoción. Consulta en la cartelera de cinesa.es las películas en las que no se aplican promociones. No se permitirán devoluciones de las entradas. ABCINE se reserva el derecho de aplicar suplementos para ciertas películas o en fechas determinadas.\r\n\r\nEsta promoción no es aplicable a aquellas películas en cuya ficha online se especifica ‘No todas las promociones son válidas para esta película’.\r\n\r\nVÁLIDO HASTA: Válido hasta el 19/06/2017\r\n\r\n', 'promo4.jpg', 1),
-(5, '0', '50', 'Miércoles al cine', 'PRECIO: Los precios especiales Miércoles sólo se aplican en taquilla.\r\n\r\nDÍAS: Miércoles \r\nDÓNDE COMPRAR: El precio miércoles es aplicable en taquilla, web y canjeros. Los precios especiales Miércoles Cinesacard sólo se aplican en taquilla.\r\n\r\nRECARGOS: Las butacas VIP, las proyecciones 3D y las salas iSens, IMAX® y Dolby tienen un recargo extra.\r\n\r\nOTROS: Precio por entrada. No acumulable a otras ofertas. No válido para eventos especiales.\r\n\r\nVÁLIDO HASTA:Oferta válida hasta el 19/06/2017\r\n\r\n', 'promo5.jpg', 1);
 
 -- --------------------------------------------------------
 

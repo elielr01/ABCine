@@ -4,7 +4,7 @@ namespace es\ucm\fdi\aw;
 $app = App::getSingleton();
 $conn = $app->conexionBd();
 $sql = "SELECT *
-        FROM Pelicula
+        FROM pelicula
         WHERE comun = 1 AND preestreno = 0";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -13,7 +13,7 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 
     echo "<div class='pelicula' >";
-    echo "<a href='pelicula-detalle.php?id=".$row['id']."'> <img src= 'IMG/".$row['nombreFoto']."'/></a>";
+    echo "<a href='pelicula-detalle.php?id=".$row['id']."'> <img src= '". IMG_PATH. $row['nombreFoto']."'/></a>";
     echo "</div>";
   }
 }

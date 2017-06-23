@@ -7,8 +7,8 @@ require_once __DIR__.'/includes/config.php';
 <html>
   <head>
     <title>ABCINE</title>
-	<link rel="stylesheet" href="css/cines/estilo-AcercaDe.css">
-	<link rel="stylesheet" href="css/footerHeader/estilo.css">
+	<link rel="stylesheet" href="<?php echo CSS_PATH; ?>/cines/estilo-AcercaDe.css">
+	<link rel="stylesheet" href="<?php echo CSS_PATH; ?>/footerHeader/estilo.css">
     <meta charset="utf-8" />
 
 

@@ -6,7 +6,7 @@
 </head>
 	<header>
 		<div class="logo">			
-				 <img src="IMG/Logo.png"  />				 
+				 <img src="<?php echo IMG_PATH; ?>/Logo.png"  />				 
 			</div>
 				
 				<input type="checkbox" id="btnm">

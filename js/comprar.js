@@ -3,6 +3,7 @@
     var idSala = document.getElementById("child1").value;
 	var idCine = document.getElementById("father").value;
     var idFecha = $('#child2 option:selected').attr('id');
+    
     var urlHref = window.location.href;
     var urlReferrer = document.referrer;
    
@@ -12,6 +13,12 @@
 
     var lastSlash = urlReferrer.lastIndexOf('/');
     var ruta = urlReferrer.substring(0, lastSlash);
+
+    if(idSala == undefined || idCine == undefined || idFecha == undefined){
+        alert("No hay sesiones disponibles para esta película , lo sentimos");
+        window.location.href = ruta+"/index.php";
+        return;
+    }
  
     var datos = {
     id: idPelicula,
@@ -21,20 +28,6 @@
     };
 
    
-    
-    $.ajax({                        
-        type: "post",                 
-        url: ruta + "/includes/querySeats.php",                     
-        data: datos, 
-        success: function(response)             
-        {   
-            
-            if(response=="error"){
-                alert("Necesitas tener una cuenta para comprar entradas");
-            }else{   
-            window.location.href = ruta+"/checkout.php?id=" + idPelicula; 
-            } 
-        }
-       });
-      
+    localStorage.setItem('checkout', JSON.stringify(datos));
+    window.location.href = ruta+"/checkout.php?id=" + idPelicula;
     });

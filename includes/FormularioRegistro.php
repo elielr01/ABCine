@@ -9,6 +9,7 @@ class FormularioRegistro extends Form {
   }
 
 	protected function generaCamposFormulario ($datos) {
+	$img= IMG_PATH;
     $username='';
     $password='';
 	$nombre='';
@@ -21,7 +22,7 @@ class FormularioRegistro extends Form {
       <div class="inputs">
 					<input type="text"  	name="nombre" placeholder="Nombre" class="in100" required value=$nombre>
 					<input type="text"  	name="apellidos" placeholder="Apellidos" class="in100" required value=$apellidos>
-					<input type="email" 	name="email" placeholder="Correo electrónico" class="campoEmail" required value=$username><img class="noimg1" src="IMG/no.png"/><img class="okimg1" src="IMG/ok.png"/>
+					<input type="email" 	name="email" placeholder="Correo electrónico" class="campoEmail" required value=$username><img class="noimg1" src= ".$IMG_PATH. no.png"/><img class="okimg1" src=".$IMG_PATH. ok.png"/>
 					<input type="password"  name="pass" placeholder="Contraseña" class="in50" required value=$password>
 					<input type="text" 	 	name="telefono" placeholder="Teléfono" class="in50" required value=$tlf>
   					<input type="email" 	name="emailAlt" placeholder="Dirección de correo alternativa" class="in101" required value=$dirAlternativa>

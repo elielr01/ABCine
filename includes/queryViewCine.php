@@ -1,8 +1,6 @@
 <?php
   namespace es\ucm\fdi\aw;
-  require_once __DIR__.'/config.php';
-
-
+  
 
   $conn = App::conexionBd();
 
@@ -28,7 +26,7 @@
             echo "<div id='map'>";
 
 
-             echo "<script src='js/map/map.js'></script>";
+             echo "<script src=" . JS_PATH . "map/map.js></script>";
 		        	 echo "<script async defer
 			         src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAdGQVp0iusUDU4LVpNde-wo6lrYzRhXhg&callback=initMap'>";
 			      echo "</script>";
@@ -72,7 +70,7 @@
                   echo "<h2>". $row['p_nombre'] ."</h2>";
 
     
-                  echo "<div class='pelicula-img'><a href='pelicula-detalle.php?id=" . $row['p_id'] . "'><img src='IMG/" . $row['nombreFoto'] . "'/></a></div>";
+           echo "<div class='pelicula-img'><a href='pelicula-detalle.php?id=" .$row['p_id']."'> <img src= '". IMG_PATH. $row['nombreFoto']."'/></a>";
                 
                echo "</div>";
 

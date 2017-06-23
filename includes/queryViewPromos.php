@@ -16,7 +16,10 @@
      echo "<div class='promo-contenedor'>";
         echo "<h1>" . $row['nombre'] . "</h1>";
         echo "<div class='promo-img'>";
-          echo "<img src='IMG/". $row['nombreFoto'] . "'/>";
+          $var = $row['nombreFoto'];
+
+          
+          echo '<img src="' , IMG_PATH , $var , '"/>';
         echo "</div>";
 
         echo "<div class='promo-descripcion'>";

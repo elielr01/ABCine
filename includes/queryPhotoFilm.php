@@ -13,5 +13,5 @@
     $row = $result->fetch_assoc();
     
     
-   echo "IMG/" . $row['nombrefoto'];
+   echo IMG_PATH . $row['nombrefoto'];
 ?>

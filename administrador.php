@@ -5,9 +5,9 @@ require_once __DIR__.'/includes/config.php';
 <html>
   <head>
     <title>ABCINE</title>
-	<link rel="stylesheet" href="css/admin/estilo-admin.css">
+	<link rel="stylesheet" href="<?php echo CSS_PATH; ?>/admin/estilo-admin.css">
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/footerHeader/estilo.css">
+    <link rel="stylesheet" href="<?php echo CSS_PATH; ?>/footerHeader/estilo.css">
 
   </head>
 	<body>

@@ -22,6 +22,7 @@ EOF;
   }
 
   protected function procesaFormulario($datos) {
+	
     $result = array();
     $dir = getcwd();
     $target_dir = $dir . "/userFolder/IMG/";

@@ -19,7 +19,9 @@
 
      echo "<div class='media'>";
        echo "<div class='cartel'>";
-         echo "<img src= 'IMG/". $row['nombrefoto'] . "'/>";
+       $var= $row['nombrefoto'];
+         echo "<img src=" , '"' , IMG_PATH ,  $var , '"/>';
+         
        echo "</div>";
 
        echo "<div class='trailer'>";
