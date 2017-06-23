@@ -10,14 +10,12 @@ require_once __DIR__.'/includes/config.php';
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8" />
-  <link rel="stylesheet" href="css/footerHeader/estilo.css">
-   <link rel="stylesheet" href="css/goup/fonts.css">
+  <link rel="stylesheet" href="<?php echo CSS_PATH; ?>/footerHeader/estilo.css">
+	<link rel="stylesheet" href="<?php echo CSS_PATH; ?>/group/fonts.css">
   </head>
 
 
 	<body>
-	
-		
 		<?php
 		$app->doInclude('comun/header.php');
 		?>
@@ -26,9 +24,9 @@ require_once __DIR__.'/includes/config.php';
 
 			<div class="slide">
 				<ul>
-					<li><a href="#"><img class="slideImg" src="IMG/slide1.jpg" style="width:100%"></a></li>
-					<li><a href="#"><img class="slideImg" src="IMG/slide2.jpg" style="width:100%"></a></li>
-					<li><a href="#"><img class="SlideImg" src="IMG/slide3.jpg" style="width:100%"></a></li>
+					<li><a href="#"><img class="slideImg" src="<?php echo IMG_PATH ?>slide1.jpg" style="width:100%"></a></li>
+					<li><a href="#"><img class="slideImg" src="<?php echo IMG_PATH ?>slide2.jpg" style="width:100%"></a></li>
+					<li><a href="#"><img class="SlideImg" src="<?php echo IMG_PATH ?>slide3.jpg" style="width:100%"></a></li>
 				</ul>
 			</div>
 
@@ -48,19 +46,19 @@ require_once __DIR__.'/includes/config.php';
 
 			<div class="cabece"><h2>Nuestras Promociones</h></div>
 			<div class="promo">
-				<a href="promociones-detalle1.php"><img src="IMG/promo1.jpg"/></a>
+				<a href="promociones-detalle.php?id=1"><img src="<?php echo IMG_PATH ?>promo1.jpg"/></a>
 			</div>
 			<div class="promo">
-				<a href="promociones-detalle2.php"><img src="IMG/promo2.jpg"/></a>
+				<a href="promociones-detalle.php?id=2"><img src="<?php echo IMG_PATH ?>promo2.jpg"/></a>
 			</div>
 			<div class="promo">
-				<a href="promociones-detalle3.php"><img src="IMG/promo3.jpg"/></a>
+				<a href="promociones-detalle.php?id=3"><img src="<?php echo IMG_PATH ?>promo3.jpg"/></a>
 			</div>
 			<div class="promo">
-				<a href="promociones-detalle4.php"><img src="IMG/promo4.jpg"/></a>
+				<a href="promociones-detalle.php?id=4"><img src="<?php echo IMG_PATH ?>promo4.jpg"/></a>
 			</div>
 			<div class="promo">
-				<a href="promociones-detalle5.php"><img src="IMG/promo5.jpg"/></a>
+				<a href="promociones-detalle.php?id=5"><img src="<?php echo IMG_PATH ?>promo5.jpg"/></a>
 
 			</div>
 
@@ -68,8 +66,8 @@ require_once __DIR__.'/includes/config.php';
 		<?php
 		$app->doInclude('comun/footer.html');
 		?>
-		
+
 		   <script src="http://code.jquery.com/jquery-latest.js"></script>
-   		   <script src="js/arriba.js"></script>
+   		   <script src="<?php echo JS_PATH ?>/arriba.js"></script>
 	</body>
 </html>
