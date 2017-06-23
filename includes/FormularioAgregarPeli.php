@@ -3,7 +3,8 @@ namespace es\ucm\fdi\aw;
 
 class FormularioAgregarPeli extends Form {
 	public function __construct() {
-    parent::__construct('formBaneo');
+    $opciones['enctype']="multipart/form-data";
+    parent::__construct('formFoto', $opciones);
   }
 
 	protected function generaCamposFormulario ($datos) {
