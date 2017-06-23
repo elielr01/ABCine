@@ -57,7 +57,7 @@ EOF;
     if ( $ok ) {
       $user = User::login($username, $password);
 
-      if ( $user->getActivo()==0){
+      if ($user && $user->getActivo()==0){
         $result[] = 'El usuario no está activo actualmente , consulte con un administrador';
         return $result;
       }
