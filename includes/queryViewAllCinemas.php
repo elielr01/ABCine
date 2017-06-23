@@ -3,7 +3,7 @@
   namespace es\ucm\fdi\aw;
 
   $conn = App::conexionBd();
-  $sql = "SELECT c.nombre AS c_nombre, p.id AS p_id, p.nombre AS p_nombre, p.nombreFoto, p.sinopsis, f.fecha
+  $sql = "SELECT c.nombre AS c_nombre, p.id AS p_id, p.nombre AS p_nombre, p.nombreFoto, p.sinopsis
           FROM cine c, sala s, funcion f, pelicula p
           WHERE c.id = s.idCine AND s.id = f.id_sala AND f.id_pelicula = p.id
           GROUP BY c.id, p.id
