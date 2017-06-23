@@ -31,9 +31,10 @@ if ($result != null && $result->num_rows > 0) {
     echo "</div>";
 
   }
-  $result->free();
+
 } else {
   echo "ERROR: 0 results";
   echo $_SESSION['id'];
 }
+//$result->close();
 ?>

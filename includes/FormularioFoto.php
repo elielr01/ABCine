@@ -81,7 +81,7 @@ EOF;
             } else {
             echo "Error updating record: " . $conn->error;
             }
-
+           
         } else {
             echo "Sorry, there was an error uploading your file.";
         }

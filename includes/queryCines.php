@@ -20,5 +20,5 @@
     }
   }
 
-  $result->free();
+  //$conn->close()
 ?>

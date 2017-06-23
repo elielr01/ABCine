@@ -41,13 +41,13 @@
 
     
     
-    $result->free();
+    
     $usr = $_SESSION['username'];
     $infoQuery = array('usr'=>$usr,'id'=>$id,'sala'=>$sala,'funcion'=>$fun);
     $response['seat']=$infoSeat;
     $response['user']=$infoQuery;
   
-
+    //$result->close();
 	  //fwrite($fh,json_encode($response,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES|JSON_NUMERIC_CHECK));
     echo json_encode($response,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES|JSON_NUMERIC_CHECK);
     //fclose($fh);

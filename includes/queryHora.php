@@ -25,8 +25,7 @@ WHERE id_pelicula='$id' AND s.numSala='$sala' and c.nombre='$cine' and f.id_sala
       }
     }
   
-  
-  $result->free();
+  //$result->close();
   header('Content-Type: application/json');
   echo json_encode($send, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 

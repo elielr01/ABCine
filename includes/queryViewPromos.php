@@ -12,7 +12,7 @@
 
      $result = $conn->query($sql);
      $row = $result->fetch_assoc();
-
+     
      echo "<div class='promo-contenedor'>";
         echo "<h1>" . $row['nombre'] . "</h1>";
         echo "<div class='promo-img'>";
@@ -28,6 +28,6 @@
 
          echo "</div>";
        echo "</div>";
-
+       $result->close();
 
  ?>

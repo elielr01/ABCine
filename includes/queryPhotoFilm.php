@@ -12,6 +12,6 @@
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     
-    
+    $conn->close();
    echo IMG_PATH . $row['nombrefoto'];
 ?>

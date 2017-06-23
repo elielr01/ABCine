@@ -42,7 +42,7 @@
      echo "<div class='containercompra'>";
        echo "<div class='containerslector'>";
 
-
-      $result->free();
+      
+     // $result->close();
 
 ?>

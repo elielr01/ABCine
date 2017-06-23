@@ -3,8 +3,8 @@ namespace es\ucm\fdi\aw;
 
 class FormularioAgregarPeli extends Form {
 	public function __construct() {
-    $opciones['enctype']="multipart/form-data";
-    parent::__construct('formFoto', $opciones);
+        $opciones['enctype']="multipart/form-data";
+    parent::__construct('formBaneo',$opciones);
   }
 
 	protected function generaCamposFormulario ($datos) {
@@ -41,6 +41,7 @@ class FormularioAgregarPeli extends Form {
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     // Check if image file is a actual image or fake image
 
+    echo $_FILES["fileToUpload"]['name'];
     if(isset($_POST["submit"])) {
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if($check !== false) {
@@ -72,11 +73,11 @@ class FormularioAgregarPeli extends Form {
         echo "Sorry, your file was not uploaded.";
     // if everything is ok, try to upload file
     } else {
-
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
             $app = App::getSingleton();
             $conn = $app->conexionBd();
+
 
             $query = "INSERT INTO pelicula (comun, descripcion, nombre, nombreFoto, preestreno, sinopsis, urlyoutube)
                       VALUES(0,'". $datos['descripcion_peli'] ."', '". $datos['nombre_peli'] ."', '". $_FILES["fileToUpload"]["name"] . "', 0, '". $datos['sinopsis_peli'] ."', '". $datos['url_youtube'] ."')" ;
@@ -90,10 +91,10 @@ class FormularioAgregarPeli extends Form {
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
-
     }
     return $result;
 
 	}
 }
+
 ?>

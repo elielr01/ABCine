@@ -83,9 +83,10 @@ Class User {
         }
         $rs->free();
       }
+    
       return $user;
     }
-
+    
     return false;
   }
 
@@ -101,6 +102,7 @@ Class User {
       $rs->free();
       return $user;
     }
+   
     return false;
   }
 

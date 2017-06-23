@@ -18,5 +18,6 @@
       echo "</div>";
     }
   }
-  $result->free();
+  $result->close();
+ 
   ?>

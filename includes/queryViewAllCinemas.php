@@ -44,5 +44,6 @@
   } else {
     echo "ERROR: 0 results";
   }
-  $result->free();
+  $result->close();
+  
 ?>

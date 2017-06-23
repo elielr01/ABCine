@@ -24,8 +24,8 @@
       }
     }
 
-  $result->free();
+  
   echo implode(";", $send);
 
-
+  $result->close();
  ?>
