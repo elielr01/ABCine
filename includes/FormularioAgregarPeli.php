@@ -41,7 +41,6 @@ class FormularioAgregarPeli extends Form {
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     // Check if image file is a actual image or fake image
 
-    echo $_FILES["fileToUpload"]['name'];
     if(isset($_POST["submit"])) {
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if($check !== false) {
