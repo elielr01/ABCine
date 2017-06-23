@@ -58,7 +58,6 @@ require_once __DIR__.'/includes/config.php';
         <li>  Teléfono </li>
         <li> Email </li>
         <li><a  href="uploadPhoto.php"></i> Cambiar foto de perfil</a></li>
-        <li><a  href="#"></i>Cambiar contraseña </a></li>
         <li><a href="compras-realizadas.php">Mis tickets comprados</a></li>
       </ul>
         </div>
