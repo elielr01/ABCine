@@ -67,7 +67,7 @@ EOF;
         App::getSingleton()->login($user);
        $result = \es\ucm\fdi\aw\App::getSingleton()->resuelve('/index.php');
       }else {
-        $result[] = 'El usuario o la contraseña es incorrecta';
+        $result[] = 'El usuario o la contraseña son incorrectos';
       }
     }
 
