@@ -9,6 +9,7 @@
           GROUP BY c.id, p.id
           ORDER BY c.id, p.id
           ";
+
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
     // output data of each row
@@ -28,8 +29,10 @@
         echo "<div class='cine-contenedor-header'><h1>" . $nombre_cine_ahora . "</h1></div>";
         echo "<div class='cine-contenedor-peliculas'>";
       }
+
       echo "<div class='pelicula-contenedor'><h2>" . $row['p_nombre'] . "</h2>";
-      echo "<div class='pelicula-img'><a href='pelicula-detalle.php?id=" . $row['p_id'] . "'><img src='IMG/" . $row['nombreFoto'] . "'/></a></div>";
+      echo "<div class='pelicula-img'><a href='pelicula-detalle.php?id=" . $row['p_id'] . "'><img src='" . IMG_PATH. $row['nombreFoto'] . "'/></a></div>";
+
       echo "<div class='pelicula-detalles'><p>";
       echo $row['sinopsis'];
       //echo "</p><br><h4>Horarios:</h4><br><p class='horarios'>";
