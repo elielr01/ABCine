@@ -1,33 +1,14 @@
 <?php
-
 require_once __DIR__.'/includes/config.php';
-
 ?>
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ABCINE</title>
-
-
+  <title>ABCINE</title>
 	<link rel="stylesheet" href="<?php echo CSS_PATH; ?>/admin/estilo-añadir.css">
-    <meta charset="utf-8" />
-
-     <script language ="javascript">
-
-    	function mgs(){
-
-    		alert("Pelicula registrada.")
-
-    	}
-
-    </script>
-
-
-    <link rel="stylesheet" href="<?php echo CSS_PATH; ?>/footerHeader/estilo.css">
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="<?php echo CSS_PATH; ?>/footerHeader/estilo.css">
   </head>
-
-
-
 	<body>
     <?php
 		$app->doInclude('comun/header.php');
@@ -35,6 +16,21 @@ require_once __DIR__.'/includes/config.php';
 
 		<article id=main>
 
+      <div class="main-container">
+
+        <h2 class ="form-titulo">Añadir Pelicula</h2>
+
+        <div class="form-container">
+          <?php
+            $formAddPeli = new \es\ucm\fdi\aw\FormularioAgregarPeli();
+            $formAddPeli->gestiona();
+          ?>
+        </div>
+
+
+      </div>
+
+      <!--
 			<form class="form-registro"  action="index.html" onsubmit="mgs()">
 
 				<h2 class ="form-titulo">Añadir Pelicula</h2>
@@ -77,7 +73,7 @@ require_once __DIR__.'/includes/config.php';
 
 			</form>
 
-
+    -->
 		</article>
 
     <?php
