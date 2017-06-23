@@ -1,0 +1,55 @@
+.tickets-contenedor{
+  background-color: #f6f5f2;
+
+	font-family:"HCo Gotham SSm",Helvetica,Arial,sans-serif;
+
+	border-color: black;
+	border-style: solid;
+
+	margin: 30px;
+}
+
+.tickets-contenedor-header {
+	background-color: black;
+	color: white;
+	padding: 10px;
+}
+
+.tickets-contenedor-header h1 {
+	text-decoration: underline;
+	font-size: 2rem;
+}
+
+.tickets-lista-contenedor{
+	padding: 10px;
+	overflow: hidden;
+}
+
+
+.ticket-contenedor {
+	clear: both;
+}
+
+.ticket-img-pelicula {
+	margin: 15px;
+	float:left;
+
+	max-width: 25%;
+}
+
+.ticket-img-pelicula img{
+	width: 150px;
+	height: 210px;
+}
+
+.ticket-detalles {
+	margin: 15px;
+	float: left;
+
+	max-width: 75%;
+
+}
+
+.ticket-detalles h2 {
+  text-decoration: underline;
+}

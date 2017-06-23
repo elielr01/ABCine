@@ -17,15 +17,15 @@ require_once __DIR__.'/includes/config.php';
     <?php
 		$app->doInclude('comun/header.php');
 		?>
-	
-	
+
+
 		<article>
 		<?php
         if ($app->tieneRol('admin', '', '') || $app->tieneRol('user', '', 'Neceistas estar logueado') )
              {
 
       ?>
-      
+
       <div class="profilePicture">
         <div class="pic">
 
@@ -59,6 +59,7 @@ require_once __DIR__.'/includes/config.php';
         <li> Email </li>
         <li><a  href="uploadPhoto.php"></i> Cambiar foto de perfil</a></li>
         <li><a  href="#"></i>Cambiar contraseña </a></li>
+        <li><a href="compras-realizadas.php">Mis tickets comprados</a></li>
       </ul>
         </div>
 
@@ -74,7 +75,7 @@ require_once __DIR__.'/includes/config.php';
 END;
         }
           ?>
-		  
+
       </div>
 
       <?php
@@ -82,7 +83,7 @@ END;
       ?>
 		</article>
 
-	
+
     <?php
     $app->doInclude('comun/footer.html');
     ?>
