@@ -68,27 +68,21 @@
 
                   echo "<div class='pelicula-contenedor'>";
                   echo "<h2>". $row['p_nombre'] ."</h2>";
+				  echo "<div class='pelicula-img'><a href='pelicula-detalle.php?id=".$row['p_id']."'> <img src= '". IMG_PATH. $row['nombreFoto']."'/></a></div>";
+				  echo "<div class='pelicula-detalles'>";
+				  echo $row['sinopsis'];
+				  echo "<p class=horarios>";
+				  echo"<br>";
+           
+            echo $row['fecha'];
+            echo"<br>";      
+			 
+			echo"</p>";
+			echo"</div>";
 
-    
-           echo "<div class='pelicula-img'><a href='pelicula-detalle.php?id=" .$row['p_id']."'> <img src= '". IMG_PATH. $row['nombreFoto']."'/></a>";
-                
-               echo "</div>";
-
-                echo "<div class='pelicula-detalles'>";
-                echo $row['sinopsis'];
-                echo "<p class=horarios>";
-                echo"<br>";
-             }
-             
-              echo $row['fecha'];
-              echo"<br>";
-             
-        }
-
-         echo"</p>";
-          echo"</div>";
-
-          echo"</div>";
+			echo"</div>";
+		}
+		}
 
       }
 
