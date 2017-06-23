@@ -39,8 +39,7 @@ EOF;
 
 
   protected function procesaFormulario($datos) {
-    print_r ($datos);
-    echo "hola";
+    
     $result = array();
     $ok = true;
     $username = isset($datos['username']) ? $datos['username'] : null ;
@@ -71,7 +70,7 @@ EOF;
         $result[] = 'El usuario o la contraseña es incorrecta';
       }
     }
-    print_r( $result);
+   
     return $result;
   }
 }
