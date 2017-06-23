@@ -17,7 +17,7 @@ if ($result != null && $result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     echo "<div class='ticket-contenedor'>";
       echo "<div class='ticket-img-pelicula'>";
-        echo "<img src='IMG/" . $row['nombreFoto'] . "' />";
+        echo "<img src='" . IMG_PATH . $row['nombreFoto'] . "' />";
       echo "</div>";
 
       echo "<div class='ticket-detalles'>";
