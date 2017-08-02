@@ -28,18 +28,18 @@ require_once __DIR__.'/includes/config.php';
 
           	<h1 class="promotitulo"> Promociones destacadas </h1>
 
-            <div class="promos-img">
-               <a href="promociones-detalle1.php"><img src="IMG/promo1.jpg"></a>
+           <div class="promos-img">
+               <a href="promociones-detalle.php?id=1"><img src="IMG/promo1.jpg"></a>
                <p class ="descripdes">Jueves mas barato</p>
             </div>
 
             <div class="promos-img">
-               <a href="promociones-detalle2.php"><img src="IMG/promo2.jpg"></a>
+               <a href="promociones-detalle.php?id=2"><img src="IMG/promo2.jpg"></a>
               <p class ="descripdes">Cambia tus puntos</p>
             </div>
 
             <div class="promos-img">
-               <a href="promociones-detalle3.php"><img src="IMG/promo3.jpg"></a>
+               <a href="promociones-detalle.php?id=3"><img src="IMG/promo3.jpg"></a>
               <p class ="descripdes">Euro 6000 menú</p>
             </div>
 
@@ -54,31 +54,31 @@ require_once __DIR__.'/includes/config.php';
 
           	<h1 class="promotitulo"> Todas nuestras promociones </h1>
 
-            <div class="promos-img">
-               <a href="promociones-detalle1.php"><img src="IMG/promo1.jpg"></a>
+           div class="promos-img">
+               <a href="promociones-detalle.php?id=1"><img src="IMG/promo1.jpg"></a>
                <p class ="descripdes">Jueves mas barato</p>
 
             </div>
 
 
             <div class="promos-img">
-               <a href="promociones-detalle2.php"><img src="IMG/promo2.jpg"></a>
+               <a href="promociones-detalle.php?id=2"><img src="IMG/promo2.jpg"></a>
               <p class ="descripdes">Cambia tus puntos</p>
             </div>
 
             <div class="promos-img">
-              <a href="promociones-detalle3.php"><img src="IMG/promo3.jpg"></a>
+              <a href="promociones-detalle.php?id=3"><img src="IMG/promo3.jpg"></a>
               <p class ="descripdes">Euro 6000 menú</p>
             </div>
 
             <div class="promos-img">
-               <a href="promociones-detalle4.php"><img src="IMG/promo4.jpg"></a>
+               <a href="promociones-detalle.php?id=4"><img src="IMG/promo4.jpg"></a>
                <p class ="descripdes">La gran quedada</p>
 
             </div>
 
             <div class="promos-img">
-               <a href="promociones-detalle5.php"><img src="IMG/promo5.jpg"></a>
+               <a href="promociones-detalle.php?id=5"><img src="IMG/promo5.jpg"></a>
               <p class ="descripdes">Miércoles al cine</p>
             </div>
 
